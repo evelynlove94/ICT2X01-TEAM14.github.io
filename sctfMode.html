@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ride Safe</title>
+    <meta name="description" content="Hello, WebVR! � A-Frame">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+</head>
+
+<a-scene>
+    <a-assets>
+        <img id="sctfEditMode-back" src="img/button/btnBack.png">
+        <img id="mainmenu-cyclex-title" src="img/button/cyclex.png">
+    </a-assets>
+
+    <!--  --------- SKY  --------- -->
+    <a-sky src="img\LakeDistrict.jpg" material="" geometry="" scale="" position=""></a-sky>
+
+    <!--  --------- BUTTONS with TEXT --------- -->
+    <a-entity id="mainmenu-cyclex" position="-5 2 -6">
+        <a-image src="#mainmenu-cyclex-title" geometry="width:3.65" position="5 0 1" material="" scale="2 1.2 1.2"></a-image>
+    </a-entity>
+
+
+    <a-entity id="mainmenu-sctfmode-button" position="0 -2.5 -6">
+        <a-image src="#sctfEditMode-back" geometry="primitive:box;width:3.65" position="0 0 1" material=""></a-image>
+    </a-entity>
+
+    <a-text value="Hello, World!" text="width:10;value:Choose a Scenario to edit;color:#000000" position="-2.6 0.5 -6" id="lblScenario"></a-text>
+
+
+    <a-text value="Hello, World!" text="width:10;value:scenario01;color:white" position="-8 -1 -6" id="lblScenario01"></a-text>
+    <a-text value="Hello, World!" text="width:10;value:scenario02;color:white" position="-5 -1 -6" id="lblScenario02"></a-text>
+    <a-text value="Hello, World!" text="width:10;value:scenario03;color:white" position="-1.7 -1 -6" id="lblScenario03"></a-text>
+    <a-text value="Hello, World!" text="width:10;value:scenario04;color:white" position="1.7 -1 -6" id="lblScenario04"></a-text>
+    <a-text value="Hello, World!" text="width:10;value:scenario05;color:white" position="5 -1 -6" id="lblScenario05"></a-text>
+
+    <!--  --------- CAMERA AND CURSOR  --------- -->
+    <a-camera look-controls-enabled wasd-controls-enabled position="0 0 2">
+        <!--The camera is a bit far from position 0 0 0 so you can view the full picture  -->
+        <a-cursor position="0 -0.25 -1.5" geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.015;" material="color: #11d8c4; shader: flat"
+            fuse="true" timeout="10">
+        </a-cursor>
+
+    </a-camera>
+</a-scene>
+
+
+</html <!�positioning is left right, up down, forward backward�>
