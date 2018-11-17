@@ -15,6 +15,7 @@
         <img id="mainmenu-sctfmode" src="img/button/btnSCTFMode.png">
         <img id="mainmenu-startgame" src="img/button/btnStartGame.png">
         <img id="mainmenu-tutorial" src="img/button/btnTutorial.png">
+        <img id="mainmenu-exit" src="img/button/btnExit.png">
         <img id="mainmenu-cyclex-title" src="img/button/cyclex.png">
     </a-assets>
 
@@ -22,29 +23,29 @@
     <a-sky src="img\LakeDistrict.jpg" material="" geometry="" scale="" position=""></a-sky>
 
     <!--  --------- BUTTONS with TEXT --------- -->
-    <a-entity id="mainmenu-sctfmode-button" position="-5 -1 -6">
-        <a-image src="#mainmenu-sctfmode" geometry="primitive:box;width:3.65" position="0 0 1"></a-image>
-    </a-entity>
-
-    <a-entity id="mainmenu-startgame-button" position="0 -1 -6">
-        <a-image src="#mainmenu-startgame" geometry="primitive:box;width:3.65" position="0 0 1"></a-image>
-    </a-entity>
-
-    <a-entity id="mainmenu-tutorial-button" position="5 -1 -6">
-        <a-image src="#mainmenu-tutorial" geometry="primitive:box;width:3.65" position="0 0 1"></a-image>
-    </a-entity>
-
-    <!-- <a-entity id="mainmenu-cyclex" position="-5 1 -6">
-        <a-image src="#mainmenu-cyclex-title" geometry="primitive:box;width:3.65" position="0 0 1"></a-image>
-    </a-entity> -->
-
-    <a-entity id="mainmenu-cyclex" position="-5 1 -6">
+    <a-entity id="mainmenu-cyclex" position="-5 2 -6">
         <a-image src="#mainmenu-cyclex-title" geometry="width:3.65" position="5 0 1" material="" scale="2 1.2 1.2"></a-image>
+    </a-entity>
+
+    <a-entity id="mainmenu-sctfmode-button" position="0 -2 -6">
+        <a-image src="#mainmenu-sctfmode" geometry="primitive:box;width:3.65" position="0 0 1" material=""></a-image>
+    </a-entity>
+
+    <a-entity id="mainmenu-startgame-button" position="0 0 -6">
+        <a-image src="#mainmenu-startgame" geometry="primitive:box;width:3.65" position="0 0 1" material=""></a-image>
+    </a-entity>
+
+    <a-entity id="mainmenu-tutorial-button" position="-5 -2 -6">
+        <a-image src="#mainmenu-tutorial" geometry="primitive:box;width:3.65" position="0 0 1" material=""></a-image>
+    </a-entity>
+
+    <a-entity id="mainmenu-exit-button" position="5 -2 -6">
+        <a-image src="#mainmenu-exit" geometry="primitive:box;width:3.65" position="0 0 1" material=""></a-image>
     </a-entity>
     <!--  --------- CAMERA AND CURSOR  --------- -->
     <a-camera look-controls-enabled wasd-controls-enabled position="0 0 1">
         <!--The camera is a bit far from position 0 0 0 so you can view the full picture  -->
-        <a-cursor position="0 0 -1.5" geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.015;" material="color: #11d8c4; shader: flat"
+        <a-cursor position="0 -0.25 -1.5" geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.015;" material="color: #11d8c4; shader: flat"
             fuse="true" timeout="10">
         </a-cursor>
 
