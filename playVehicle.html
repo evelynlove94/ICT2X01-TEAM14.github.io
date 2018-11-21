@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Select Vehicle</title>
+        <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+        <script src="js/editFunctions.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <!--Assets-->
+            <a-assets>
+                <img id="skyBg" src="images/editScreen.jpg">
+                <img id="selectBicycle" src="images/selectBicycle.png">
+                <img id="selectScooter" src="images/selectEscooter.png">
+                <img id="selectPedestrian" src="images/selectPedestrian.png">
+            </a-assets> 
+
+            <!--Skybox-->
+            <a-sky src="#skyBg" rotation="0 45 0"></a-sky>
+            
+            <!--Play Scene-->
+            <a-entity class="not-clickable" id="playScene">
+                <a-camera wasd-controls-enabled="false">
+                    <a-cursor color="red" raycaster="objects: .vehicleBtns" cursor="fuse: true" position="0 0 -1">
+                        <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="backwards" from="0.1 0.1 0.1"
+                            to="1 1 1"></a-animation>
+                        <a-animation begin="fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+                    </a-cursor>
+                </a-camera>
+                
+                <a-entity class="vehicleBtns" onclick="backButton()" id="backButton" text="value: Back; color: #111111; align: center; width: 5"
+                    geometry="primitive: plane; height: .3" material="color: #FAFAFA" position="0 -1 -4"></a-entity>
+
+                <a-entity class="not-clickable" id="playTitle" text="value: Choose Vehicle; color: #FAFAFA; align: center; width: 5"
+                    geometry="primitive: plane; width: 3; height: .3" material="color: #7A7A7A" position="0 4 -4"></a-entity>
+
+                <a-entity class="vehicleBtns" onclick="selectedBicycle()" id="bicycle" geometry="primitive: plane; height: 2; width: 2.5" material="color: #111111" position="-3 2 -4">
+                    <a-image src="#selectBicycle" width="1.8" position="0 .1 .1"></a-image>
+                    <a-text value="Bicycle" color="#FAFAFA" align="center" width="5" position="0 -0.7 .1"></a-text>
+                </a-entity>
+                    
+                <a-entity class="vehicleBtns" onclick="" id="eScooter" geometry="primitive: plane; height: 2; width: 2.5" material="color: #111111" position="0 2 -4">
+                    <a-image src="#selectScooter" width="1.4" position="0 .1 .2"></a-image>
+                    <a-text value="eScooter" color="#FAFAFA" align="center" width="5" position="0 -0.7 .1"></a-text>
+                </a-entity>
+                    
+                <a-entity class="vehicleBtns" onclick="" id="pedestrian" geometry="primitive: plane; height: 2; width: 2.5" material="color: #111111" position="3 2 -4">
+                    <a-image src="#selectPedestrian" width="1" position="0 .1 .1"></a-image>
+                    <a-text value="Pedestrian" color="#FAFAFA" align="center" width="5" position="0 -0.7 .1"></a-text>
+                </a-entity>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
