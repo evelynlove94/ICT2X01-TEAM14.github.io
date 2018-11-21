@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Quit Game</title>
+        <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+        <script src="js/editFunctions.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <!--Assets-->
+            <a-assets>
+                <img id="skyBg" src="images/editScreen.jpg">
+            </a-assets>
+        
+            <!--Skybox-->
+            <a-sky src="#skyBg" rotation="0 45 0"></a-sky>
+        
+            <!--Quit Scene-->
+            <a-entity class="not-clickable" id="quitScene">
+                <a-camera wasd-controls-enabled="false">
+                    <a-cursor color="red" raycaster="objects: .menuButtons" cursor="fuse: true" position="0 0 -1">
+                        <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="backwards" from="0.1 0.1 0.1"
+                            to="1 1 1"></a-animation>
+                        <a-animation begin="fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1"
+                            to="0.1 0.1 0.1"></a-animation>
+                    </a-cursor>
+                </a-camera>
+        
+                <a-entity class="menuButtons" onclick="backButton()" id="backButton" text="value: Back; color: #f94a00; align: center; width: 5"
+                    geometry="primitive: plane; height: .3" material="color: #111111" position="3 0 -4" rotation="0 -40 0"></a-entity>
+        
+                <a-entity class="not-clickable" id="loginTitle" text="value: SIMULATION ENDED; color: #FAFAFA; align: center; width: 5"
+                    geometry="primitive: plane; width: 2.5; height: .3" material="color: #7A7A7A" position="3 4 -4" rotation="0 -40 0"></a-entity>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
