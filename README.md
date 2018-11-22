@@ -1,6 +1,7 @@
-# Project Title
+# CycleX - Riding Safe
 
-CycleX - Riding Safe
+Riding safely with Virtual Reality.
+CycleX is a software that makes use of Virtual Reality (VR) technology that aims to advocate and cultivate safe riding practices among cyclists on Singapore shared paths, footpaths and roads through a series of simulated cycling scenarios. It can also be used by non-cyclists such as pedestrians and drivers so that they are able to have an immersive firsthand experience of what it feels like to be in the cyclists’ shoes. With this experience, we hope that they would be able to empathize cyclists and be more aware of the situations faced by them.
 
 ## Getting Started
 
@@ -46,25 +47,57 @@ https://evelynlove94.github.io/ICT2X01-TEAM14.github.io/
 * [Visual Studio Code](https://code.visualstudio.com/) - Code Management
 * [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - Launch a development local Server with live reload feature for static & dynamic pages
 
+## How to play?
+
+Start the localhost/ICT2X01-TEAM14.github.io/index.html. User can select "Tutorial", "Play" or "Exit"
+```
+localhost/ICT2X01-TEAM14.github.io/index.html
+```
+![Login UI](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/Index.PNG?token=Aeaf7GvktHspTicSO-bwLM9zniNoXs-Lks5b_5aywA%3D%3D)
+
+If the user selects "Tutorial", they will be directed to the tutorial page where they can learn the basics of the game.
+```
+localhost/ICT2X01-TEAM14.github.io/tutorial.html
+```
+![Tutorial UI](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/Tutorial.PNG?token=Aeaf7CyMW6MaKqxa7QlpjVMRK1KPC6M8ks5b_5Y9wA%3D%3D)
+
+If the user selects "Play", they will be directed to the vehicle page where they are allowed to choose their mode of transportation.
+```
+localhost/ICT2X01-TEAM14.github.io/playVehicle.html
+```
+![playVeh UI](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/PlayVeh.PNG?token=Aeaf7OigpziJA5-Nq-M8GgYWEgOmcZ-yks5b_5ZWwA%3D%3D)
+
+Once the user selects their mode of transportation, they will be directed the scenario page to decide on 1 of the 5 scenarios of their choice.
+```
+localhost/ICT2X01-TEAM14.github.io/playScenario.html
+```
+![Play Scenario](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/selectScenario.PNG?token=Aeaf7M1wA_HkXnLryT-nyJYuODquO0Ptks5b_5ZwwA%3D%3D)
+
+Once the user selects their choice of scenario, they will be directed into the game.
+```
+localhost/ICT2X01-TEAM14.github.io/roadCycle.html
+```
+![InGame](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/InGame.PNG?token=Aeaf7Hc4OyukFhMkIZct7K8q0VIScZDNks5b_5aYwA%3D%3D)
+
 ## Using the Administration UI
 
 To access the Administration UI, go to:
 ```
 localhost/ICT2X01-TEAM14.github.io/login.html
 ```
-![Admin UI](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/Login.PNG?token=Aeaf7AopaOJOlji7KV5XOGrtcg5781T3ks5b_47zwA%3D%3D)
+![Admin UI](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/Login.PNG?token=Aeaf7KCAEtWXsMQuffHdgheRYNV5e76Gks5b_5cywA%3D%3D)
 
 You will be prompted for a pin. Once you have entered your pin, you will be directed to:
 ```
 localhost/ICT2X01-TEAM14.github.io/selectEditScenario.html
 ```
-![Select Edit Scenario](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/EditScenario.PNG?token=Aeaf7JFFCzyEm61uQt4gjoKExH9YyQ_Wks5b_48bwA%3D%3D)
+![Select Edit Scenario](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/EditScenario.PNG?token=Aeaf7BXu5oNyUoLfVeHVXjPUXgGAk5KXks5b_5dKwA%3D%3D)
 
 You can select a scenario and edit accordingly:
 ```
 localhost/ICT2X01-TEAM14.github.io/editScenario.html
 ```
-![Edit Scenario](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/EditingScenario.PNG?token=Aeaf7HrAP_PjNimeYKsSd6somIwL28mcks5b_49AwA%3D%3D)
+![Edit Scenario](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/EditingScenario.PNG?token=Aeaf7PgId0gb3c6_afNj79hk2esDd9YCks5b_5dgwA%3D%3D)
 
 ## Authors
 
