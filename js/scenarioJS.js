@@ -119,3 +119,20 @@ function safetyPromptHide() {
 function keepLeftPromptHide() {
     document.getElementById("keepLeftPrompt").setAttribute("visible", "false")
 }
+
+function continuePromptHide() {
+    document.getElementById("continuePrompt").setAttribute("visible", "false")
+}
+
+function roadPromptHide() {
+    document.getElementById("roadPrompt").setAttribute("visible", "false")
+}
+
+function trafficPromptHide() {
+    document.getElementById("trafficPrompt").setAttribute("visible", "false")
+}
+
+function afterCrossPromptHide() {
+    document.getElementById("afterCrossPrompt").setAttribute("visible", "false")
+}
+
