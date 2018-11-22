@@ -4,6 +4,18 @@
         <title>SCTF Login</title>
         <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
         <script src="js/editFunctions.js"></script>
+        <script>
+            function loginCheck() {
+            var txt;
+            var pin = prompt("Please Input Pin");
+            if (pin == "123") {
+                editSceneSelection()
+            } else {
+                alert("Invalid Pin");
+            }
+        }
+        </script>
+        
     </head>
     
     <body>
@@ -35,7 +47,7 @@
 
                 <a-plane class="not-clickable" color="#111111" height=".5" width="3" position="1 3.1 -4" rotation="0 -10 0"></a-plane>
 
-                <a-entity class="menuButtons" onclick="editSceneSelection()" id="SCTFLogin" text="value: Login; color: #f94a00; align: center; width: 5"
+                <a-entity class="menuButtons" onclick="loginCheck()" id="SCTFLogin" text="value: Login; color: #f94a00; align: center; width: 5"
                     geometry="primitive: plane; height: .3" material="color: #111111" position="1 0.5 -4" rotation="0 -10 0"></a-entity>
             </a-entity>
         </a-scene>
