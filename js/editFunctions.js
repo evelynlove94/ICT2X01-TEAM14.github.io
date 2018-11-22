@@ -157,3 +157,13 @@ function roadCycleScene() {
     console.log("PLAYING ROAD CYCLE LEVEL")
     window.location.href = "roadCycle.html";
 }
+
+function pathCyclingScene() {
+    console.log("PLAYING PATH CYCLE LEVEL")
+    window.location.href = "CyclingPath.html";
+}
+
+function zebraPathScene() {
+    console.log("PLAYING ZEBRA PATH")
+    window.location.href = "ZebraPath.html";
+}
