@@ -51,4 +51,4 @@ https://evelynlove94.github.io/ICT2X01-TEAM14.github.io/
 * **Evelyn Tan** - *Initial work* - [evenlynlove94](https://github.com/evelynlove94)
 * **Md Fauzi** - *Initial work* - [MFauZ](https://github.com/MFauz)
 
-See also the list of [contributors](https://github.com/ICT2X01-TEAM14.github.io/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/evelynlove94/ICT2X01-TEAM14.github.io/graphs/contributors) who participated in this project.
