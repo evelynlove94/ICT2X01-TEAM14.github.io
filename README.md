@@ -52,19 +52,19 @@ To access the Administration UI, go to:
 ```
 localhost/ICT2X01-TEAM14.github.io/login.html
 ```
-![Admin UI](https://lh4.googleusercontent.com/6ecml3Qhcx4_QcSY84IlYnfF8OphyTKNbb3x8arHYDVKYt3nUUSZiTABuY6grcHE_DJTrmTeAMVRHOgLOQ1Z=w1365-h889-rw)
+![Admin UI](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/Login.PNG?token=Aeaf7AopaOJOlji7KV5XOGrtcg5781T3ks5b_47zwA%3D%3D)
 
 You will be prompted for a pin. Once you have entered your pin, you will be directed to:
 ```
 localhost/ICT2X01-TEAM14.github.io/selectEditScenario.html
 ```
-![Select Edit Scenario](https://lh3.googleusercontent.com/dUiHLJPzIfNpKTyZgj5_L8pAHyyxEmz6RidfQwAp3Ge_mPSeHO3WdUChj_wYZnVWwV6eSdfY1IQ-esh46o3M=w1920-h889-rw)
+![Select Edit Scenario](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/EditScenario.PNG?token=Aeaf7JFFCzyEm61uQt4gjoKExH9YyQ_Wks5b_48bwA%3D%3D)
 
 You can select a scenario and edit accordingly:
 ```
 localhost/ICT2X01-TEAM14.github.io/editScenario.html
 ```
-![Edit Scenario](https://lh3.googleusercontent.com/D33MmUVzumIzZhkPVA0yMqgsqQ21rQGxElfI5VTT8fM4B3fR9fyngw793xx97_G21e70IvolsHZ1pm0TTDOM=w1365-h889-rw)
+![Edit Scenario](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/EditingScenario.PNG?token=Aeaf7HrAP_PjNimeYKsSd6somIwL28mcks5b_49AwA%3D%3D)
 
 ## Authors
 
