@@ -36,9 +36,7 @@ Install Git Desktop (https://desktop.github.com/)
 ## Deployment
 
 Demo Live version:
-```
 https://evelynlove94.github.io/ICT2X01-TEAM14.github.io/
-```
 
 ## Built With
 
