@@ -1,7 +1,7 @@
 # CycleX - Riding Safe
 
 Riding safely with Virtual Reality.
-CycleX is a software that makes use of Virtual Reality (VR) technology that aims to advocate and cultivate safe riding practices among cyclists on Singapore shared paths, footpaths and roads through a series of simulated cycling scenarios. It can also be used by non-cyclists such as pedestrians and drivers so that they are able to have an immersive firsthand experience of what it feels like to be in the cyclists’ shoes. With this experience, we hope that they would be able to empathize cyclists and be more aware of the situations faced by them.
+CycleX is an interactive application that makes use of Virtual Reality (VR) technology that aims to instill safe cycling practices into both cyclists and non-cyclists who may not necessarily be well aware of the cycling rules and ethics. CycleX hopes to achieve this by allowing the users to go through an immersive virtual experience and decide on their actions through a series of scenarios from the perspective of a cyclist and/or pedestrian.
 
 ## Getting Started
 
