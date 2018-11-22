@@ -80,19 +80,19 @@
 		<a-assets-item id="traffic_light" src="sceneModels\traffic_light.ply"></a-assets-item>
 	</a-assets>
 
-	<a-sky src="img\SouthernSky.jpg" material="" geometry="" scale="" position=""></a-sky>
+	<a-sky src="images\SouthernSky.jpg" material="" geometry="" scale="" position=""></a-sky>
 
 	<!-- PCN left grass -->
-	<a-plane src="img\textures\env_grass2e_texture0.png" repeat="3 30" position="3 0 -4" rotation="-90 0 0" width="30"
+	<a-plane src="images\textures\env_grass2e_texture0.png" repeat="3 30" position="3 0 -4" rotation="-90 0 0" width="30"
 	 height="80" shadow="" material="" geometry=""></a-plane>
 
 	<!-- Road left grass -->
-	<a-plane src="img\textures\env_grass2e_texture0.png" repeat="3 30" position="0 0 -4" rotation="-90 0 0" width="55"
+	<a-plane src="images\textures\env_grass2e_texture0.png" repeat="3 30" position="0 0 -4" rotation="-90 0 0" width="55"
 	 height="80" shadow="" material="" geometry=""></a-plane>
-	<a-plane src="img\textures\sgroad.jpg" repeat="2 100" position="-2 0.02 -4" rotation="-90 0 0" width="10" height="80"
+	<a-plane src="images\textures\sgroad.jpg" repeat="2 100" position="-2 0.02 -4" rotation="-90 0 0" width="10" height="80"
 	 shadow="" material="" geometry=""></a-plane>
 
-	<a-plane src="img\textures\zebracross.jpg" position="-1.95 0.25 -20.85" rotation="-90 0 0" shadow="" material="src:img\textures\zebracross.jpg;repeat:3 1"
+	<a-plane src="images\textures\zebracrossing.jpg" position="-1.95 0.25 -20.85" rotation="-90 0 0" shadow="" material="repeat:3 1"
 	 geometry="primitive:plane;width:9.2;height:2.5"></a-plane>
 
 	<a-entity ply-model="src:#traffic_light" position="-7.15 0 -23.06" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
@@ -100,13 +100,15 @@
 	<!-- <a-entity ply-model="src:#stage" position="5.73 0 -5.05" scale="0.2 0.2 0.2" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#stage" position="5.73 0 0" scale="0.2 0.2 0.2" rotation="-90 -90 0" geometry="primitive: box"></a-entity> -->
 
-	<a-entity ply-model="src:#stage" position="5.73 0 15" scale="0.2 0.2 0.2" rotation="-90 -90 0" geometry="primitive:box"></a-entity>
-	<a-entity ply-model="src:#stage" position="5.73 0 9.82" scale="0.2 0.2 0.2" rotation="-90 90 0"></a-entity>
+	<a-entity id="stage1-1" ply-model="src:#stage" position="5.73 0 15" scale="0.2 0.2 0.2" rotation="-90 -90 0"></a-entity>
+	<a-entity id="stage1-2" ply-model="src:#stage" position="5.73 0 9.82" scale="0.2 0.2 0.2" rotation="-90 90 0"></a-entity>
 
 	<a-entity ply-model="src:#chr_headphones" position="6.5 1.41 12.43" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
 
-	<a-entity checkpoint="" position="5.78 0.91 17.8" geometry="primitive:box;height:1.22;width:2.52;depth:1.68" material="side:double;transparent:true;opacity:0.01"></a-entity>
-	<a-entity checkpoint="" position="5.78 0.91 -20.5" geometry="primitive:box;height:1.22;width:2.52;depth:1.68" material="side:double;transparent:true;opacity:0.01"></a-entity>
+	<a-entity id="transparentAtTraffic" checkpoint="" position="5.78 0.91 -20.5" geometry="primitive:box;height:1.22;width:2.52;depth:1.68"
+	 material="side:double;transparent:true;opacity:0.01;visible:false"></a-entity>
+	<a-entity id="transparentAtBridge" checkpoint="" position="5.74 0.91 17.21" geometry="primitive:box;height:3.8;width:3;depth:1"
+	 material="side:double;transparent:true;opacity:0.01;visible:false"></a-entity>
 
 	<!-- Player -->
 	<a-entity position="6 0 35" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
@@ -116,25 +118,40 @@
 		</a-entity>
 	</a-entity>
 
+	<!-- <a-entity checkpoint="" position="5.98 0.78 3.02" geometry="primitive:box;height:1.22;width:3.12;depth:1.68" material="side:double;transparent:true;opacity:0.01"></a-entity> -->
+
 	<!-- Quiz -->
-	<a-entity position="5.8 2.56 16.02" geometry="primitive:plane;height:0.5;width:2.92" material="color:black" text="width:3.84;value:Can pedestrians cycle on a bridge?;zOffset:0;align:center">
-	</a-entity>
-	<a-entity checkpoint="" position="6.49 1.8 15.78" material="color:red;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.6;height:5;width:2.5"
-	 text="width:5;value:False;zOffset:0;align:center">
+	<a-entity id="quiz1-question" position="5.68 2.43 16" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
+	 text="width:3.84;value:Can pedestrians cycle on a bridge?;zOffset:0;align:center">
 	</a-entity>
 
-	<!-- <a-entity checkpoint="" position="5.98 0.78 3.02" geometry="primitive:box;height:1.22;width:3.12;depth:1.68" material="side:double;transparent:true;opacity:0.01"></a-entity> -->
+	<a-entity id="quiz2-question" position="3.88 2 -19.12" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
+	 text="width:3.84;value:Question2;zOffset:0;align:center" rotation="0 90 0">
+	</a-entity>
 
 	<!-- Checkpoints -->
 	<a-entity position="1 0 -10">
-		<a-entity checkpoint="" position="4.92 1 40" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
-		 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:Start Scenario;color:#000000;align:center;width:2.8"></a-entity>
-
-		<a-entity checkpoint="" position="4.09 1.77 25.8" material="color:green;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.6;height:5;width:2.5"
-		 text="width:5;value:True;zOffset:0;align:center">
+		<a-entity id="quiz1-answerTrue" checkpoint="" position="5.5 1.8 26" material="color:red;opacity:0.8;transparent:true"
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center">
 		</a-entity>
+
+		<a-entity id="quiz1-answerFalse" checkpoint="" position="4.1 1.8 26" material="color:green;opacity:0.8;transparent:true"
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center">
+		</a-entity>
+
+		<!-- 
+		<a-entity id="quiz2-answerTrue" checkpoint="" position="6.49 1.8 16" material="color:red;opacity:0.8;transparent:true"
+		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center">
+		</a-entity>
+
+		<a-entity id="quiz2-answerFalse" checkpoint="" position="4.09 1.8 16" material="color:green;opacity:0.8;transparent:true"
+		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center">
+		</a-entity> -->
+
+
+		<a-entity id="startScenario" checkpoint="" position="4.92 1 40" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
+		 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:Start Scenario;color:#000000;align:center;width:2.8"></a-entity>
 	</a-entity>
-	
 
 	<!-- Character -->
 
@@ -149,12 +166,12 @@
 	<a-entity ply-model="src:#obj_tree2" position="3.50 0 -5" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree2" position="3.50 0 0" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree4" position="3.50 0 5" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree1" position="3.50 0 10" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+	<!-- 	<a-entity ply-model="src:#obj_tree1" position="3.50 0 10" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree4" position="3.50 0 15" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree2" position="3.50 0 20" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree4" position="3.50 0 25" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree2" position="3.50 0 30" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree1" position="3.50 0 35" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+	<a-entity ply-model="src:#obj_tree1" position="3.50 0 35" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity> -->
 
 	<!-- PCN right trees -->
 	<a-entity ply-model="src:#obj_tree2" position="8 0 -40" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
@@ -165,14 +182,14 @@
 	<a-entity ply-model="src:#obj_tree4" position="8 0 -15" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree1" position="8 0 -10" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree4" position="8 0 -5" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree4" position="8 0 0" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+	<!-- 	<a-entity ply-model="src:#obj_tree4" position="8 0 0" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree2" position="8 0 5" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree1" position="8 0 10" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree2" position="8 0 15" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree4" position="8 0 20" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree1" position="8 0 25" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree2" position="8 0 30" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree2" position="8 0 35" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+	<a-entity ply-model="src:#obj_tree2" position="8 0 35" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity> -->
 
 	<!-- vehicles -->
 	<a-entity ply-model="src:#wagon4" position="11 0 18" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
@@ -213,7 +230,7 @@
 	<!-- Scenes -->
 	<!-- <a-entity ply-model="src:#army" position="-8.5 0 20" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity> -->
 	<a-entity ply-model="src:#scene_store11" position="-10 0 -12.4" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
-	<a-entity ply-model="src:#scene_store7" position="-10 0 12.50" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
+	<!-- <a-entity ply-model="src:#scene_store7" position="-10 0 12.50" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity> -->
 	<a-entity ply-model="src:#scene_store4" position="-10 0 26" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 
 	<!-- <a-entity ply-model="src:#theatre" position="12.5 0 -18" scale="0.1 0.1 0.1" rotation="-90 270 0"></a-entity> -->
