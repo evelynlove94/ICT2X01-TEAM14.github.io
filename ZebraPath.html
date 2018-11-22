@@ -7,8 +7,58 @@
 	<title>Ride Safe</title>
 	<meta name="description" content="Hello, WebVR! � A-Frame">
 	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+	<!-- <script src="zebra.js"></script> -->
 
 	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
+
+	<script>
+		// AFRAME.registerComponent('quiz1-answerFalse', {
+		// 	init: function () {
+		// 		var el = this.el;
+		// 		el.addEventListener('click', function () {
+		// 			// var quiz1 = document.getElementById('quiz1Img');
+		// 			// quiz1.style.visibility = 'fa';
+
+		// 			console.log("init");
+		// 		});
+		// 	}
+		// });
+
+
+		function showquiz1(){
+			var ele = document.getElementById("quiz1-answerFalse");
+
+			//ele.onclick = function() {
+				// alert("init for quiz1-answerFalse");
+			var quiz1 = document.getElementById('quiz1wrong');
+			quiz1.setAttribute('visible', true);
+            	// quiz1.style.visibility = 'visible';
+			//};
+		}
+
+		function showquiz2(){
+			var ele = document.getElementById("quiz2-answerFalse");
+
+			//ele.onclick = function() {
+			//alert("init for quiz2-answerFalse");
+			var quiz2 = document.getElementById('quiz2wrong');
+			quiz2.setAttribute('visible', true);
+            	// quiz2.style.visibility = 'visible';
+			//};
+		}
+
+		function showquiz3(){
+			var ele = document.getElementById("quiz3-answerTrue");
+
+			//ele.onclick = function() {
+			//alert("init for quiz3-answerFalse");
+			var quiz3 = document.getElementById('quiz3wrong');
+			quiz3.setAttribute('visible', true);
+            	// quiz3.style.visibility = 'visible';
+			//};
+		}
+
+	</script>
 </head>
 <a-scene inspector="url:https://aframe.io/releases/0.3.0/aframe-inspector.min.js" background="color:#ECECEC" class="fullscreen"
  keyboard-shortcuts="" screenshot="" vr-mode-ui="">
@@ -78,9 +128,13 @@
 
 		<a-assets-item id="stage" src="sceneModels\stage.ply"></a-assets-item>
 		<a-assets-item id="traffic_light" src="sceneModels\traffic_light.ply"></a-assets-item>
+
+		<img id="quiz1Img" src="images/quiz1rules.PNG">
+		<img id="quiz2Img" src="images/quiz2rules.PNG">
+		<img id="quiz3Img" src="images/quiz3rules.PNG	">
 	</a-assets>
 
-	<a-sky src="images\SouthernSky.jpg" material="" geometry="" scale="" position=""></a-sky>
+	<!-- <a-sky src="images\SouthernSky.jpg" material="" geometry="" scale="" position=""></a-sky> -->
 
 	<!-- PCN left grass -->
 	<a-plane src="images\textures\env_grass2e_texture0.png" repeat="3 30" position="3 0 -4" rotation="-90 0 0" width="30"
@@ -98,9 +152,9 @@
 	<a-entity ply-model="src:#traffic_light" position="2.66 0 10.72" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#traffic_light" position="-7.15 0 7.09" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 
-	<a-entity id="transparentAtTraffic" checkpoint="" position="5.78 0.91 8.77" geometry="primitive:box;height:1.22;width:2.52;depth:1.68"
+	<a-entity id="transparentAtTraffic" checkpoint="" position="7 0.91 8.87" geometry="primitive:box;height:1.22;width:2.52;depth:1.68"
 	 material="side:double;transparent:true;opacity:1;visible:false"></a-entity>
-	<a-entity id="transparentAtBridge" checkpoint="" position="5.74 0.91 17.21" geometry="primitive:box;height:3.8;width:3;depth:1"
+	<a-entity id="transparentAtBridge" checkpoint="" position="-7.59 0.80 8.45" geometry="primitive:box;height:3.8;width:3;depth:1"
 	 material="side:double;transparent:true;opacity:0.01;visible:false"></a-entity>
 
 	<!-- Player -->
@@ -113,37 +167,58 @@
 
 	<!-- <a-entity checkpoint="" position="5.98 0.78 3.02" geometry="primitive:box;height:1.22;width:3.12;depth:1.68" material="side:double;transparent:true;opacity:0.01"></a-entity> -->
 
-	<a-entity id="quiz1-question" position="5.8 1.5 15" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
-	 text="width:3.84;value:Can pedestrians cycle on a bridge?;zOffset:0;align:center">
+	<a-entity id="quiz1-question" position="5.84 1.5 22" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
+	 text="width:2.5;value:Proceed to pedestrain crossing to cross the road?;zOffset:0;align:center">
 	</a-entity>
 
 	<a-entity id="quiz2-question" position="4.15 2 9.09" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
-	 text="width:3.84;value:Question2;zOffset:0;align:center" rotation="0 90 0">
+	 text="width:3.84;value:Should you dismount your bike?;zOffset:0;align:center" rotation="0 90 0">
+	</a-entity>
+
+	<a-entity id="quiz3-question" position="3.06 2.28 9.13" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
+	 text="width:3;value:Should you not check clear before you move?;zOffset:0;align:center" rotation="0 90 0">
 	</a-entity>
 
 	<a-entity id="startScenario" checkpoint="" position="5.85 1 31.96" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
 	 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:Start Scenario;color:#000000;align:center;width:2.8"></a-entity>
 
-	<a-entity id="startScenario-2" checkpoint="" position="5.85 0.91 26.68" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
+	<a-entity id="startScenario-2" checkpoint="" position="5.85 0.91 24" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
 	 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:50m away from zebra;color:#000000;align:center;width:2.8"></a-entity>
 
 	<!-- Checkpoints -->
 	<a-entity position="1 0 -10">
-		<a-entity id="quiz1-answerFalse" checkpoint="" position="4.41 0.82 25" material="color:green;opacity:0.8;transparent:true"
+		<a-entity id="quiz1-answerTrue" checkpoint="" position="4 0.82 32" material="color:green;opacity:0.8;transparent:true"
 		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center">
 		</a-entity>
 
-		<a-entity id="quiz1-answerTrue" checkpoint="" position="5.44 0.82 25" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center">
+		<a-entity id="quiz1-answerFalse" position="5.50 0.82 32" material="color:red;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.4;height:5;width:2.5"
+		 text="width:5;value:False;zOffset:0;align:center" onclick="showquiz1()">
 		</a-entity>
 
-		<a-entity id="quiz2-answerFalse" checkpoint="" position="3.01 0.82 19.7" material="color:green;opacity:0.8;transparent:true"
+		<a-image id="quiz1wrong" src="#quiz1Img" position="5 2.61 32.03" height ="1.16" width ="4.38" geometry="primitive:plane" visible="false"></a-image>
+
+		<a-entity id="quiz2-answerTrue" checkpoint="" position="3.01 0.82 19.7" material="color:green;opacity:0.8;transparent:true"
 		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center" rotation="0 90 0">
 		</a-entity>
 
-		<a-entity id="quiz2-answerTrue" checkpoint="" position="3.01 0.82 18.59" material="color:red;opacity:0.8;transparent:true"
+		<a-entity id="quiz2-answerFalse" position="3.01 0.82 18.59" material="color:red;opacity:0.8;transparent:true"
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center" rotation="0 90 0" onclick="showquiz2()">
+		</a-entity>
+
+		<a-image id="quiz2wrong" src="#quiz2Img" position="3.04 2.95 19.05" height ="1" width ="2.15" geometry="primitive:plane" visible="false" rotation="0 90 0"></a-image>
+		
+		<a-entity id="quiz3-answerTrue" position="2.17 0.82 19.7" material="color:green;opacity:0.8;transparent:true"
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center" rotation="0 90 0"  onclick="showquiz3()">
+		</a-entity>
+
+		<a-image id="quiz3wrong" src="#quiz3Img" position="1.96 3.07 19.05" height ="1" width ="2.15" geometry="primitive:plane" visible="false" rotation="0 90 0"></a-image>
+		
+		<a-entity id="quiz3-answerFalse" checkpoint="" position="2.18 0.82 18.59" material="color:red;opacity:0.8;transparent:true"
 		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center" rotation="0 90 0">
 		</a-entity>
+
+		
+
 
 		<!-- 
 		<a-entity id="quiz2-answerTrue" checkpoint="" position="6.49 1.8 16" material="color:red;opacity:0.8;transparent:true"
@@ -290,6 +365,15 @@
 	<!-- <a-entity position="6.5 2 10" geometry="primitive:plane;height:0.5;width:2" material="color:black" text="width:2;value:Pedestrians on headphones that are unable to hear cyclists approaching and unknowingly walk directly into a moving bicycle
 	;zOffset:0">
 	</a-entity> -->
+	<!--Vehicles-->
+
+	<a-entity id="car1" class="non-clickable"  position="-0.30 0 -39"  ply-model="src:#car1" rotation="-90 0 180" scale="0.1 0.1 0.1">
+		<a-animation attribute="position" dur="5000" from="-3.40 0 -48.13" to= "-3.40 0 28"  repeat="indefinite" easing="linear"></a-animation>
+	</a-entity>
+
+	<a-entity id="car5" class="non-clickable"  position="-0.30 0 -39"  ply-model="src:#car5" rotation="-90 0 0" scale="0.1 0.1 0.1">
+		<a-animation attribute="position" dur="5000" from= "0.30 0 29.89" to="-0.30 0 -39" repeat="indefinite" easing="linear"></a-animation>
+	</a-entity>
 
 
 </a-scene>
