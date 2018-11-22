@@ -17,15 +17,11 @@ Clone the repository https://github.com/evelynlove94/ICT2X01-TEAM14.github.io
 
 Installing XAMPP
 
-```
-Install XAMPP (https://www.apachefriends.org/index.html)
-```
+* [XAMPP](https://www.apachefriends.org/index.html)
 
 Installing Git Desktop
 
-```
-Install Git Desktop (https://desktop.github.com/)
-```
+* [Git Desktop](https://desktop.github.com/)
 
 ## Running the tests
 
