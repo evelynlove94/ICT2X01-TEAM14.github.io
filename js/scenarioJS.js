@@ -39,6 +39,7 @@ AFRAME.registerComponent('bound-collider3', {
             console.log(x + " has collided")
             if (x = "portal3"){
                 document.getElementById("portal3").setAttribute("visible", "false")
+                document.getElementById("continuePrompt").setAttribute("visible", "true")
                 document.getElementById("portal4").setAttribute("visible", "true")
             }
         })
@@ -53,6 +54,7 @@ AFRAME.registerComponent('bound-collider4', {
             console.log(x + " has collided")
             if (x = "portal4"){
                 document.getElementById("portal4").setAttribute("visible", "false")
+                document.getElementById("roadPrompt").setAttribute("visible", "true")
                 document.getElementById("portal5").setAttribute("visible", "true")
             }
         })
@@ -68,9 +70,11 @@ AFRAME.registerComponent('bound-collider5', {
             console.log(x + " has collided")
             if (x = "portal5"){
                 document.getElementById("portal5").setAttribute("visible", "false")
+                document.getElementById("trafficPrompt").setAttribute("visible", "true")
                 setTimeout(function(){
                     stopCross()
                     document.getElementById("portal6").setAttribute("visible", "true")
+                    document.getElementById("greenLight").setAttribute("visible", "true")
                 }, delayInMilliseconds);
             }
         })
@@ -85,6 +89,22 @@ AFRAME.registerComponent('bound-collider6', {
             console.log(x + " has collided")
             if (x = "portal6"){
                 document.getElementById("portal6").setAttribute("visible", "false")
+                document.getElementById("afterCrossPrompt").setAttribute("visible", "true")
+                document.getElementById("portal7").setAttribute("visible", "true")
+            }
+        })
+    }
+})
+
+AFRAME.registerComponent('bound-collider7', {
+    init: function () {
+        var x = this.el.getAttribute("id")
+        this.el.addEventListener("hitstart", (e) => {
+            //Toggle Cop
+            console.log(x + " has collided")
+            if (x = "portal7"){
+                document.getElementById("portal7").setAttribute("visible", "false")
+                document.getElementById("endPrompt").setAttribute("visible", "true")
             }
         })
     }
@@ -136,3 +156,7 @@ function afterCrossPromptHide() {
     document.getElementById("afterCrossPrompt").setAttribute("visible", "false")
 }
 
+function replayRoadCycle() {
+    console.log("REPLAY ROAD CYCLE LEVEL")
+    window.location.href = "roadCycle.html";
+}

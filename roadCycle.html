@@ -38,6 +38,7 @@
             <img id="footpath1" src="images/footpath1.png">
             <img id="helmet" src="images/helmet.png">
             <img id="vestImg" src="images/vest.png">
+            <img id="green" src="images/greenLight.png">
         </a-assets>
 
         <!--Skybox-->
@@ -79,8 +80,8 @@
             repeat="1 3"></a-image>
         <a-image class="non-clickable" src="#HDB2" height="1500" width="250" position="77.75 122 -700" rotation="0 -90 -90"
             repeat="1 3"></a-image>
-        <a-image class="non-clickable" src="#zebra" height="90" width="108" position="11.5 .2 -500" rotation="-90 0 0"
-            static-body></a-image>
+        <a-image class="non-clickable" src="#zebra" height="90" width="108" position="11.5 .2 -500" rotation="-90 0 0"></a-image>
+        <a-image class="non-clickable" id="greenLight" src="#green" height="12" width="5"  position="-30 17 -460" rotation="0 0 90" visible="false"></a-image>
 
         <!--NPCs-->
         <a-obj-model class="entities" onclick="safetyToggle()" id="cop" src="#cop-obj" mtl="#cop-mtl" position="-38 7.4 -70"
@@ -97,7 +98,7 @@
             scale="15 15 15"></a-entity>
         <a-entity id="trafficLight4" class="non-clickable" gltf-model="#trafficLight" rotation="0 180 0" position="-40 -7 -530"
             scale="15 15 15"></a-entity>
-        <a-entity id="stopSign" class="non-clickable" gltf-model="#stopSign" rotation="0 0 0" position="-38 0 -400"
+        <a-entity id="stopSign" class="non-clickable" gltf-model="#stopSign" rotation="0 0 0" position="-38 0 -375"
             scale="3 3 3"></a-entity>
 
         <!--Vehicles-->
@@ -138,7 +139,7 @@
         </a-entity>
 
         <!--Collision Trigger Test-->
-        <a-box class="non-clickable" bound-collider="" static-body="" position="-14 2 -25" width="40" height="4" color="#FFC65D"
+        <a-box class="non-clickable" bound-collider="" position="-14 2 -25" width="40" height="4" color="#FFC65D"
             material="color:#808080" id="bound1" class="box" opacity="0"></a-box>
 
         <!-- Checkpoints -->
@@ -172,6 +173,11 @@
             <a-box checkpoint="" width="10" height="15" position="0 7 0" opacity="0"></a-box>
             <a-text value="Checkpoint 6" color="#111111" position="6 17 0" rotation="0 180 0" width="50"></a-text>
         </a-entity>
+        <a-entity id="portal7" class="entities cp" bound-collider7="" gltf-model="#portal" position="-30 0 -650"
+            rotation="0 180 0" scale=".7 .7 .7" visible="false">
+            <a-box checkpoint="" width="10" height="15" position="0 7 0" opacity="0"></a-box>
+            <a-text value="Checkpoint 7" color="#111111" position="6 17 0" rotation="0 180 0" width="50"></a-text>
+        </a-entity>
 
         <!--Prompt Dialogs-->
         <a-entity class="non-clickable" id="introPrompt" text="value: Let's try cycling \non the road!; color: #FAFAFA; align: center; width: 10"
@@ -179,7 +185,6 @@
             <a-entity class="entities" onclick="introPromptHide()" text="value: Okay; color: #111111; align: center; width: 5"
                 geometry="primitive: plane; height: .3" material="color: #f94a00" position="0 -.7 .2"></a-entity>
         </a-entity>
-
         <a-entity id="safetyPrompt" visible="false" onclick="safetyPromptHide()" position="-30 15 -60">
             <a-entity class="non-clickable" geometry="primitive: plane; height: 4; width: 10" material="color: #111111" 
                 text="value: When cycling on the \nroad, you need to wear a helmet. \nTalk to the SCTF Officer to get one!; color: #FAFAFA; align: center; width: 10">
@@ -187,7 +192,6 @@
                     geometry="primitive: plane; height: .5" material="color: #f94a00" position="0 -1.5 .2"></a-entity>
             </a-entity>
         </a-entity>
-
         <a-entity id="keepLeftPrompt" visible="false" onclick="keepLeftPromptHide()" position="-20 14 -110">
             <a-entity class="non-clickable" geometry="primitive: plane; height: 4; width: 10" material="color: #111111" 
                 text="value: For your own safety, \n keep to the left side of the road.; color: #FAFAFA; align: center; width: 10">
@@ -195,7 +199,6 @@
                     geometry="primitive: plane; height: .5" material="color: #f94a00" position="0 -1.2 .2"></a-entity>
             </a-entity>
         </a-entity>
-
         <a-entity id="continuePrompt" visible="false" onclick="continuePromptHide()" position="-30 14 -160">
             <a-entity class="non-clickable" geometry="primitive: plane; height: 4; width: 10" material="color: #111111" 
                 text="value: Continue cycling; color: #FAFAFA; align: center; width: 10">
@@ -203,28 +206,34 @@
                     geometry="primitive: plane; height: .5" material="color: #f94a00" position="0 -1.2 .2"></a-entity>
             </a-entity>
         </a-entity>
-
-        <a-entity id="roadPrompt" visible="false" onclick="roadPromptHide()" position="-30 14 -160">
+        <a-entity id="roadPrompt" visible="false" onclick="roadPromptHide()" position="-27 14 -360">
             <a-entity class="non-clickable" geometry="primitive: plane; height: 4; width: 10" material="color: #111111" 
-                text="value: Continue cycling; color: #FAFAFA; align: center; width: 10">
+                text="value: While cycling on the road, \n you need to observe traffic light \nsignals, traffic signs, \nand road markings.; color: #FAFAFA; align: center; width: 10">
                 <a-entity class="entities" text="value: Okay; color: #111111; align: center; width: 5"
                     geometry="primitive: plane; height: .5" material="color: #f94a00" position="0 -1.2 .2"></a-entity>
             </a-entity>
         </a-entity>
-
-        <a-entity id="trafficPrompt" visible="false" onclick="trafficPromptHide()" position="-30 14 -160">
+        <a-entity id="trafficPrompt" visible="false" onclick="trafficPromptHide()" position="-30 14 -450">
             <a-entity class="non-clickable" geometry="primitive: plane; height: 4; width: 10" material="color: #111111" 
-                text="value: Continue cycling; color: #FAFAFA; align: center; width: 10">
+                text="value: Similar to cars, cross only during the green light.; color: #FAFAFA; align: center; width: 10">
                 <a-entity class="entities" text="value: Okay; color: #111111; align: center; width: 5"
                     geometry="primitive: plane; height: .5" material="color: #f94a00" position="0 -1.2 .2"></a-entity>
             </a-entity>
         </a-entity>
-
-        <a-entity id="afterCrossPrompt" visible="false" onclick="afterCrossPromptHide()" position="-30 14 -160">
+        <a-entity id="afterCrossPrompt" visible="false" onclick="afterCrossPromptHide()" position="-30 14 -610">
             <a-entity class="non-clickable" geometry="primitive: plane; height: 4; width: 10" material="color: #111111" 
-                text="value: Continue cycling; color: #FAFAFA; align: center; width: 10">
+                text="value: Continue cycling.; color: #FAFAFA; align: center; width: 10">
                 <a-entity class="entities" text="value: Okay; color: #111111; align: center; width: 5"
                     geometry="primitive: plane; height: .5" material="color: #f94a00" position="0 -1.2 .2"></a-entity>
+            </a-entity>
+        </a-entity>
+        <a-entity id="endPrompt" visible="false" onclick="endPromptHide()" position="-30 14 -660">
+            <a-entity class="non-clickable" geometry="primitive: plane; height: 4; width: 10" material="color: #111111" 
+                text="value: You've reached the end \nof the Road Cycle Scenario!; color: #FAFAFA; align: center; width: 10">
+                <a-entity class="entities" onclick="replayRoadCycle()" text="value: Play Again; color: #111111; align: center; width: 5"
+                    geometry="primitive: plane; height: .5; width: 2" material="color: #f94a00" position="-2 -1.2 .2"></a-entity>
+                <a-entity class="entities" id="backButton" onclick="backButton()" text="value: Main Menu; color: #111111; align: center; width: 5"
+                    geometry="primitive: plane; height: .5; width: 2" material="color: #f94a00" position="2 -1.2 .2"></a-entity>
             </a-entity>
         </a-entity>
     </a-scene>
