@@ -9,6 +9,95 @@
 	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 
 	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
+
+	<script>
+		// question 1 - false
+		// question 2 - true
+		// question 3 - true
+
+		function checkAtBridge() {
+			var eleCheckAtBridge = document.getElementById('checkAtBridge');
+			var eleQuiz1_Question = document.getElementById('quiz1-question');
+			var eleQuiz1_True = document.getElementById('quiz1-answerTrue');
+			var eleQuiz1_False = document.getElementById('quiz1-answerFalse');
+
+			eleCheckAtBridge.setAttribute('visible', false);
+			eleQuiz1_Question.setAttribute('visible', true);
+			eleQuiz1_True.setAttribute('visible', true);
+			eleQuiz1_False.setAttribute('visible', true);
+		}
+
+		function showCheckpoint2() {
+			var eleCheckAtEndBridge = document.getElementById('checkAtEndBridge');
+			eleCheckAtEndBridge.setAttribute('visible', true);
+
+			var eleQuiz1_Question = document.getElementById('quiz1-question');
+			var eleQuiz1_True = document.getElementById('quiz1-answerTrue');
+			var eleQuiz1_False = document.getElementById('quiz1-answerFalse');
+
+			eleQuiz1_Question.setAttribute('visible', false);
+			eleQuiz1_True.setAttribute('visible', false);
+			eleQuiz1_False.setAttribute('visible', false);
+		}
+
+		function checkAtEndBridge() {
+			var eleCheckAtEndBridge = document.getElementById('checkAtEndBridge');
+			var eleQuiz2_Question = document.getElementById('quiz2-question');
+			var eleQuiz2_True = document.getElementById('quiz2-answerTrue');
+			var eleQuiz2_False = document.getElementById('quiz2-answerFalse');
+
+			eleCheckAtEndBridge.setAttribute('visible', false);
+			eleQuiz2_Question.setAttribute('visible', true);
+			eleQuiz2_True.setAttribute('visible', true);
+			eleQuiz2_False.setAttribute('visible', true);
+		}
+
+		function showCheckpoint3() {
+			var eleCheckAtTraffic = document.getElementById('checkAtTraffic');
+			eleCheckAtTraffic.setAttribute('visible', true);
+
+			var eleQuiz2_Question = document.getElementById('quiz2-question');
+			var eleQuiz2_True = document.getElementById('quiz2-answerTrue');
+			var eleQuiz2_False = document.getElementById('quiz2-answerFalse');
+
+			eleQuiz2_Question.setAttribute('visible', false);
+			eleQuiz2_True.setAttribute('visible', false);
+			eleQuiz2_False.setAttribute('visible', false);
+		}
+
+		function checkAtTraffic() {
+			var eleCheckAtTraffic = document.getElementById('checkAtTraffic');
+			var eleQuiz3_Question = document.getElementById('quiz3-question');
+			var eleQuiz3_True = document.getElementById('quiz3-answerTrue');
+			var eleQuiz3_False = document.getElementById('quiz3-answerFalse');
+
+			eleCheckAtTraffic.setAttribute('visible', false);
+			eleQuiz3_Question.setAttribute('visible', true);
+			eleQuiz3_True.setAttribute('visible', true);
+			eleQuiz3_False.setAttribute('visible', true);
+		}
+
+		function showCheckpoint4() {
+			var eleCheckAtOppTraffic = document.getElementById('checkAtOppTraffic');
+			eleCheckAtOppTraffic.setAttribute('visible', true);
+
+			var eleQuiz3_Question = document.getElementById('quiz3-question');
+			var eleQuiz3_True = document.getElementById('quiz3-answerTrue');
+			var eleQuiz3_False = document.getElementById('quiz3-answerFalse');
+
+			eleQuiz3_Question.setAttribute('visible', false);
+			eleQuiz3_True.setAttribute('visible', false);
+			eleQuiz3_False.setAttribute('visible', false);
+		}
+
+		function checkAtOppTraffic() {
+			var eleCheckAtOppTraffic = document.getElementById('checkAtOppTraffic');
+
+			eleCheckAtOppTraffic.setAttribute('visible', false);
+
+			// show end scenario
+		}
+	</script>
 </head>
 <a-scene inspector="url:https://aframe.io/releases/0.3.0/aframe-inspector.min.js" background="color:#ECECEC" class="fullscreen"
  keyboard-shortcuts="" screenshot="" vr-mode-ui="">
@@ -111,17 +200,17 @@
 		<a-animation attribute="position" dur="2000" to="4.5 0 -6.18" repeat="indefinite" easing="linear"></a-animation>
 	</a-entity>
 
-	<a-entity id="transparentAtBridge" checkpoint="" position="5.74 0.91 17.56" geometry="primitive:box;height:3.8;width:3;depth:0.41999999999999993"
-	 material="side:double;transparent:true;opacity:0.2;visible:false"></a-entity>
+	<a-entity id="checkAtBridge" checkpoint="" position="5.74 0.91 17.56" geometry="primitive:icosahedron;height:3.8;width:3="
+	 material="side:double;transparent:true;opacity:0.4;visible:true;color:#ffff00;" onclick="checkAtBridge()"></a-entity>
 
-	<a-entity id="transparentAtEndBridge" checkpoint="" position="5.74 2.04 8.09" geometry="primitive:box;height:3.8;width:3;depth:0.41999999999999993"
-	 material="side:double;transparent:true;opacity:0.2;visible:false"></a-entity>
+	<a-entity id="checkAtEndBridge" checkpoint="" position="5.74 2.04 8.09" geometry="primitive:icosahedron;height:3.8;width:3"
+	 material="side:double;transparent:true;opacity:0.2;color:#ff0080" onclick="checkAtEndBridge()" visible=false></a-entity>
 
-	<a-entity id="transparentAtTraffic" checkpoint="" position="5.78 0.91 -20.5" geometry="primitive:box;height:3.8;width:1;depth:1.68"
-	 material="side:double;transparent:true;opacity:0.2;visible:false"></a-entity>
+	<a-entity id="checkAtTraffic" checkpoint="" position="5.78 0.91 -20.5" geometry="primitive:icosahedron;height:3.8;width:1;"
+	 material="side:double;transparent:true;opacity:0.4;color:#ff0000" onclick="checkAtTraffic()" visible=false></a-entity>
 
-	<a-entity id="transparentAtBusstop" checkpoint="" position="-8.09 0.91 -20.5" geometry="primitive:cylinder;height:3.8;width:10;depth:1.68"
-	 material="side:double;transparent:true;opacity:0.2;visible:false" rotation="0 180 0"></a-entity>
+	<a-entity id="checkAtOppTraffic" checkpoint="" position="-8.09 0.99 -20.5" geometry="primitive:icosahedron;height:3.8;width:10"
+	 material="side:double;transparent:true;opacity:0.62;color:#8080c0" onclick="checkAtOppTraffic()" visible=false></a-entity>
 
 	<!-- Player -->
 	<a-entity position="6 0 35" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
@@ -133,49 +222,50 @@
 
 	<!-- Quiz -->
 	<a-entity id="quiz1-question" position="5.68 2.43 16" geometry="primitive:plane;height:0.5;width:4" material="color:black"
-	 text="width:3.84;value:Pedestrians can cycle on a bridge (True/False);zOffset:0;align:center">
+	 text="width:3.84;value:Pedestrians can cycle on a bridge (True/False);zOffset:0;align:center" visible=false>
 	</a-entity>
 
 	<a-entity id="quiz2-question" position="5.68 3.41 6.2" geometry="primitive:plane;height:0.5;width:4" material="color:black"
-	 text="width:3.84;value:You should keep to the left of the lane while cycling (True/False);zOffset:0;align:center">
+	 text="width:3.84;value:You should keep to the left of the lane while cycling (True/False);zOffset:0;align:center"
+	 visible=false>
 	</a-entity>
 
-	<a-entity id="quiz3-question" position="3.88 2.2600000000000002 -20.7" geometry="primitive:plane;height:0.5;width:2.92"
+	<a-entity id="quiz3-question" position="3.88 2.2600000000000002 -20.7" geometry="primitive:plane;height:0.5;width:3.48"
 	 material="color:black" text="width:3.84;value:What is the speed limit for cycling path?;zOffset:0;align:center"
-	 rotation="0 90 0">
+	 visible=false rotation="0 90 0">
 	</a-entity>
 
 	<!-- Checkpoints -->
 	<a-entity position="1 0 -10">
-		<!-- do a prompt for wrong answer -->
-
 		<a-entity id="quiz1-answerTrue" position="5.5 1.8 26" material="color:green;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.4;height:5;width:2.5"
-		 text="width:5;value:True;zOffset:0;align:center">
+		 text="width:5;value:True;zOffset:0;align:center" visible=false>
 		</a-entity>
 
 		<a-entity id="quiz1-answerFalse" checkpoint="" position="4.1 1.8 26" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center" visible=false
+		 onclick="showCheckpoint2()">
 		</a-entity>
 
 		<a-entity id="quiz2-answerTrue" checkpoint="" position="5.34 2.4 16" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center">
+		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center" visible=false
+		 onclick="showCheckpoint3()">
 		</a-entity>
 
 		<a-entity id="quiz2-answerFalse" position="3.82 2.4 16" material="color:red;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.6;height:5;width:2.5"
-		 text="width:5;value:False;zOffset:0;align:center">
+		 text="width:5;value:False;zOffset:0;align:center" visible=false>
 		</a-entity>
 
 		<a-entity id="quiz3-answerFalse" position="2.7 1 -10" material="color:red;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.6;height:5;width:2.5"
-		 text="width:5;value:25km/h;zOffset:0;align:center" rotation="0 90 0">
+		 text="width:5;value:25km/h;zOffset:0;align:center" rotation="0 90 0" visible=false>
 		</a-entity>
 
-		<a-entity id="quiz3-answerTrue" checkpoint="" position="2.7 1 -12" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:15km/h;zOffset:0;align:center"
-		 rotation="0 90 0">
+		<a-entity id="quiz3-answerTrue" checkpoint="" position="2.7 1 -11.63" material="color:green;opacity:0.8;transparent:true"
+		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:15km/h;zOffset:0;align:center" visible=false
+		 onclick="showCheckpoint4()" rotation="0 90 0">
 		</a-entity>
 
 		<a-entity id="startScenario" checkpoint="" position="4.92 1 40" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
-		 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:Start Scenario;color:#000000;align:center;width:2.8"></a-entity>
+		 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:Let's start cycling!;color:#000000;align:center;width:2.8"></a-entity>
 	</a-entity>
 
 	<!-- Character -->
