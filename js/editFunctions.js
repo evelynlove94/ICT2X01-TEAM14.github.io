@@ -167,3 +167,13 @@ function zebraPathScene() {
     console.log("PLAYING ZEBRA PATH")
     window.location.href = "ZebraPath.html";
 }
+
+function cutscene() {
+    console.log("PLAY CUTSCENE")
+    if (document.getElementById("quiz1-answerTrue").selected = true) {
+        document.getElementById("vidPlayer").setAttribute("visible", "true")
+        document.getElementById("quiz1-answerTrue").setAttribute("visible", "false")
+        document.getElementById("quiz1-answerFalse").setAttribute("visible", "false")
+        document.getElementById("quiz1-question").setAttribute("visible", "false")
+    }
+}
