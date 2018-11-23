@@ -38,7 +38,7 @@ AFRAME.registerComponent('toggle-day', {
     init: function () {
         var el = this.el;
         el.addEventListener('click', function () {
-            el.sceneEl.emit('toggleDay', );
+            el.sceneEl.emit('toggleDay');
         });
     }
 });
@@ -47,7 +47,7 @@ AFRAME.registerComponent('toggle-night', {
     init: function () {
         var el = this.el;
         el.addEventListener('click', function () {
-            el.sceneEl.emit('toggleNight', );
+            el.sceneEl.emit('toggleNight');
         });
     }
 });
@@ -85,7 +85,7 @@ function playButton() {
     }
 }
 
-function scenarioButton(){
+function scenarioButton() {
     console.log("SELECT SCENARIO")
     if (document.getElementById('scenarioButton').selected = true) {
         window.location.href = "playScenario.html";
@@ -119,7 +119,7 @@ function editScene() {
         window.location.href = "editScenario.html";
     }
 }
-    
+
 function quitButton() {
     console.log("GAME QUIT EXECUTED")
     if (document.getElementById('quitButton').selected = true) {
@@ -168,12 +168,25 @@ function zebraPathScene() {
     window.location.href = "ZebraPath.html";
 }
 
-function cutscene() {
+function showCutSceneOne() {
     console.log("PLAY CUTSCENE")
     if (document.getElementById("quiz1-answerTrue").selected = true) {
         document.getElementById("vidPlayer").setAttribute("visible", "true")
         document.getElementById("quiz1-answerTrue").setAttribute("visible", "false")
         document.getElementById("quiz1-answerFalse").setAttribute("visible", "false")
         document.getElementById("quiz1-question").setAttribute("visible", "false")
+    }
+}
+
+function pauseCutSceneOne() {
+    console.log("HIDE CUTSCENE")
+    if (document.getElementById("play").selected = true) {
+        console.log('hello')
+        document.getElementById("control-close").setAttribute("visible", "true")
+    }
+
+    if (document.getElementById("pause").selected = true) {
+        console.log('bye')
+        document.getElementById("control-close").setAttribute("visible", "true")
     }
 }

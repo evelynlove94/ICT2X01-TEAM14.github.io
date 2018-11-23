@@ -98,6 +98,11 @@
 
 			// show end scenario
 		}
+
+		function closeCutSceneOne() {
+			document.getElementById("vidPlayer").setAttribute("visible", "false")
+			checkAtBridge();
+		}
 	</script>
 </head>
 <a-scene inspector="url:https://aframe.io/releases/0.3.0/aframe-inspector.min.js" background="color:#ECECEC" class="fullscreen"
@@ -172,6 +177,7 @@
 		<!-- Video -->
 		<video id="video-src" src="video/Video.mp4"></video>
 		<img src="assets/play.png" id="play" crossorigin="anonymous">
+		<img src="assets/exit.png" id="exit" crossorigin="anonymous">
 		<img src="assets/pause.png" id="pause" crossorigin="anonymous">
 		<img src="assets/volume-normal.png" id="volume-normal" crossorigin="anonymous">
 		<img src="assets/volume-mute.png" id="volume-mute" crossorigin="anonymous">
@@ -224,6 +230,11 @@
 	<!-- Player -->
 	<a-entity position="6 0 35" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
 		<a-entity camera position="0 1 0" look-controls="pointerLockEnabled: true">
+			<a-entity cursor position="0 0 -1" geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.03;" material="color: #70E4EF"></a-entity>
+		</a-entity>
+	</a-entity>
+	<!-- <a-entity position="6 0 35" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
+		<a-entity camera position="0 1 0" look-controls="pointerLockEnabled: true">
 			<a-entity cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.03;"
 			 material="color: red">
 				<a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="backwards" from="0.1 0.1 0.1" to="1 1 1">
@@ -232,7 +243,7 @@
 				</a-animation>
 			</a-entity>
 		</a-entity>
-	</a-entity>
+	</a-entity> -->
 
 	<!-- Quiz -->
 	<a-entity id="quiz1-question" position="5.68 2.43 16" geometry="primitive:plane;height:0.5;width:4" material="color:black"
@@ -249,32 +260,39 @@
 	 visible=false rotation="0 90 0">
 	</a-entity>
 
-	<a-entity id="vidPlayer" position="6 4 14" visible="false">
+	<a-entity id="vidPlayer" position="5.31 3.41 -25.05" visible="true">
 		<!-- MEDIAS HOLDER -->
-		<a-sound id="alert-sound" src="src: url(assets/action.wav)" autoplay="false"></a-sound>
-		<a-video id="video-screen" src="#video-src" width="7" height="4" rotation="10 0 0"></a-video>
+		<a-sound id="alert-sound" src="src: url(assets/action.wav)" autoplay="false" sound=""></a-sound>
+		<a-video id="video-screen" src="#video-src" width="7" height="4" rotation="10 0 0" material="" geometry=""></a-video>
 		<!-- END MEDIAS HOLDER -->
 
 		<!-- CONTROLS -->
-		<a-image id="control-back" width="0.4" height="0.4" src="#seek-back" visible="false" scale="0.85 0.85 0.85" position="-1 -1.7 0"></a-image>
-		<a-image id="control-play" width="0.4" height="0.4" src="#play" position="0 -1.7 0"></a-image>
+		<a-image id="control-back" width="0.4" height="0.4" src="#seek-back" visible="false" scale="0.85 0.85 0.85" position="-1 -1.7 0"
+		 material="" geometry=""></a-image>
+		<a-image id="control-play" width="0.4" height="0.4" src="#play" position="0 -1.7 0" onclick="pauseCutSceneOne()"
+		 material="" geometry=""></a-image>
 		<a-image id="control-volume" width="0.4" height="0.4" src="#volume-normal" visible="false" scale="0.75 0.75 0.75"
-		 position="-2.5 -1.75 0"></a-image>
+		 position="-2.5 -1.75 0" material="" geometry=""></a-image>
+
+		<a-image id="control-close" width="0.4" height="0.4" src="#exit" position="1.73 -1.7 0.05" material="color:#FFF;shader:flat;side:double;transparent:true"
+		 geometry="primitive:plane;width:0.4;height:0.4" onclick="closeCutSceneOne()" visible="true"></a-image>
 		<!-- END CONTROLS -->
 
 		<!-- PROGRESSBAR -->
 		<a-entity id="progress-bar" geometry="primitive: plane; width: 4; height: 0.06;" material="transparent: true; visible:false; opacity: 0;"
 		 position="0 -1.5 0.1">
-			<a-plane id="progress-bar-track" width="4" height="0.06" color="black" opacity="0.2" visible="false"></a-plane>
-			<a-plane id="progress-bar-fill" width="0" height="0.06" color="#7198e5" visible="false"></a-plane>
-			</a-plane>
+			<a-plane id="progress-bar-track" width="4" height="0.06" color="black" opacity="0.2" visible="false" material=""
+			 geometry=""></a-plane>
+			<a-plane id="progress-bar-fill" width="0" height="0.06" color="#7198e5" visible="false" material="" geometry=""
+			 position=""></a-plane>
+
 			<!-- END PROGRESSBAR -->
 		</a-entity>
 	</a-entity>
 	<!-- Checkpoints -->
 	<a-entity position="1 0 -10">
 		<a-entity id="quiz1-answerTrue" position="5.5 1.8 26" material="color:green;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.4;height:5;width:2.5"
-		 text="width:5;value:True;zOffset:0;align:center " visible=false onclick="cutscene()">
+		 text="width:5;value:True;zOffset:0;align:center " visible=false onclick="showCutSceneOne()">
 		</a-entity>
 
 		<a-entity id="quiz1-answerFalse" checkpoint="" position="4.1 1.8 26" material="color:red;opacity:0.8;transparent:true"
