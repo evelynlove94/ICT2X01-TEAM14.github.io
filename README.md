@@ -33,9 +33,7 @@ Installing Git Desktop
 ## Deployment
 
 Demo Live version:
-```
-https://evelynlove94.github.io/ICT2X01-TEAM14.github.io/
-```
+* [Demo] (https://evelynlove94.github.io/ICT2X01-TEAM14.github.io/) 
 
 ## Built With
 
