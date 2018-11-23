@@ -57,6 +57,33 @@
             	// quiz3.style.visibility = 'visible';
 			//};
 		}
+		
+		function menupage(){
+			//var ele = document.getElementById("backToMenu");
+			
+			//ele.onclick = function() {
+			window.location.href = "index.html";
+			//};
+			
+			
+		}
+		
+		function retry(){
+			alert("restarting game...");
+			//var ele = document.getElementById("retry");
+			window.location.href = "ZebraPath.html";
+		}
+		
+		function displayoption(){
+			var menu = document.getElementById("backToMenu");
+			var retry = document.getElementById("retry");
+			var scene = document.getElementById("endScenario");
+			
+			menu.setAttribute('visible', true);
+			retry.setAttribute('visible', true);
+			scene.setAttribute('visible', true);
+		}
+
 
 	</script>
 </head>
@@ -128,10 +155,10 @@
 
 		<a-assets-item id="stage" src="sceneModels\stage.ply"></a-assets-item>
 		<a-assets-item id="traffic_light" src="sceneModels\traffic_light.ply"></a-assets-item>
-
+	
 		<img id="quiz1Img" src="images/quiz1rules.PNG">
 		<img id="quiz2Img" src="images/quiz2rules.PNG">
-		<img id="quiz3Img" src="images/quiz3rules.PNG	">
+		<img id="quiz3Img" src="images/quiz3rules.PNG">
 	</a-assets>
 
 	<a-sky src="images\SouthernSky.jpg" material="" geometry="" scale="" position=""></a-sky>
@@ -152,10 +179,10 @@
 	<a-entity ply-model="src:#traffic_light" position="2.66 0 10.72" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#traffic_light" position="-7.15 0 7.09" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 
-	<a-entity id="transparentAtTraffic" checkpoint="" position="7 0.91 8.87" geometry="primitive:box;height:1.22;width:2.52;depth:1.68"
+	<a-entity id="transparentAtTraffic" checkpoint="" position="6.2 0.91 8.87" geometry="primitive:box;height:1.22;width:1.82;depth:1.68"
 	 material="side:double;transparent:true;opacity:1;visible:false"></a-entity>
-	<a-entity id="transparentAtBridge" checkpoint="" position="-7.59 0.80 8.45" geometry="primitive:box;height:3.8;width:3;depth:1"
-	 material="side:double;transparent:true;opacity:0.01;visible:false"></a-entity>
+	<a-entity id="transparentAtBridge" checkpoint="" position="-7.59 0.80 9.42" geometry="primitive:box;height:3.8;width:1.63;depth:1"
+	 material="side:double;transparent:true;opacity:1;visible:false" onclick="displayoption()"></a-entity>
 
 	<!-- Player -->
 	<a-entity position="6 0 35" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
@@ -175,7 +202,7 @@
 	 text="width:3.84;value:Should you dismount your bike?;zOffset:0;align:center" rotation="0 90 0">
 	</a-entity>
 
-	<a-entity id="quiz3-question" position="3.2 2 9.13" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
+	<a-entity id="quiz3-question" position="3.4 2 9.13" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
 	 text="width:3;value:Should you not check clear before you move?;zOffset:0;align:center" rotation="0 90 0">
 	</a-entity>
 
@@ -208,7 +235,7 @@
 		<a-image id="quiz2wrong" src="#quiz2Img" position="3.04 2.95 19.05" height ="1" width ="2.15" geometry="primitive:plane" visible="false" rotation="0 90 0"></a-image>
 		
 		<a-entity id="quiz3-answerTrue" position="2.17 0.82 19.7" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:Yes;zOffset:0;align:center" rotation="0 90 0"  onclick="showquiz3()">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:Yes;zOffset:0;align:center" rotation="0 90 0" onclick="showquiz3()">
 		</a-entity>
 
 		<a-image id="quiz3wrong" src="#quiz3Img" position="1.96 3.07 19.05" height ="1" width ="2.15" geometry="primitive:plane" visible="false" rotation="0 90 0"></a-image>
@@ -217,7 +244,17 @@
 		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:No;zOffset:0;align:center" rotation="0 90 0">
 		</a-entity>
 
+		<a-entity id="backToMenu" position="-10.35 0.82 20.55" material="color:red;opacity:0.8;transparent:true"
+		 geometry="primitive:plane;height:0.65;width:1.15" text="width:5;value:Menu;zOffset:0;align:center" visible="false" rotation="0 90 0" onclick="menupage()">
+		</a-entity>
 		
+		<a-entity id="retry" position="-10.35 0.82 18.7" material="color:red;opacity:0.8;transparent:true"
+		 geometry="primitive:plane;height:0.65;width:1.15" text="width:5;value:Try Again;zOffset:0;align:center" visible="false" rotation="0 90 0" onclick="retry()">
+		</a-entity>
+		
+		<a-entity id="endScenario" checkpoint="" position="-10.35 1.8 19.78" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
+		 geometry="primitive:plane;radius:0.28;height:0.8;width:3.71" text="zOffset:0;value:You have cleared the scenario!;color:#000000;align:center;" 
+		 visible="false" rotation="0 90 0"></a-entity>
 
 
 		<!-- 
