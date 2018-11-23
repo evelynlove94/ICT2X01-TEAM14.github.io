@@ -153,9 +153,19 @@ function selectedBicycle() {
     window.location.href = "playScenario.html";
 }
 
+function selectedScooter() {
+    console.log("E-SCOOTER SELECTED")
+    window.location.href = "playScenarioB.html";
+}
+
 function roadCycleScene() {
     console.log("PLAYING ROAD CYCLE LEVEL")
     window.location.href = "roadCycle.html";
+}
+
+function roadCycleScene2() {
+    console.log("PLAYING ROAD CYCLE LEVEL")
+    window.location.href = "roadCycleScooter.html";
 }
 
 function pathCyclingScene() {

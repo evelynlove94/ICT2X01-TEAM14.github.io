@@ -104,4 +104,4 @@ localhost/ICT2X01-TEAM14.github.io/editScenario.html
 * **Don Cheng** - *Developer* - [1700802](https://github.com/1700802)
 * **Tan Fu Hui** - *Developer* - [xxxx397](https://github.com/xxxx397)
 
-See also the list of [contributors](https://github.com/ICT2X01-TEAM14.github.io/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/evelynlove94/ICT2X01-TEAM14.github.io/graphs/contributors) who participated in this project.
