@@ -175,7 +175,7 @@
 	 text="width:3.84;value:Should you dismount your bike?;zOffset:0;align:center" rotation="0 90 0">
 	</a-entity>
 
-	<a-entity id="quiz3-question" position="3.06 2.28 9.13" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
+	<a-entity id="quiz3-question" position="3.2 2 9.13" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
 	 text="width:3;value:Should you not check clear before you move?;zOffset:0;align:center" rotation="0 90 0">
 	</a-entity>
 
@@ -188,33 +188,33 @@
 	<!-- Checkpoints -->
 	<a-entity position="1 0 -10">
 		<a-entity id="quiz1-answerTrue" checkpoint="" position="4 0.82 32" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:Yes;zOffset:0;align:center">
 		</a-entity>
 
 		<a-entity id="quiz1-answerFalse" position="5.50 0.82 32" material="color:red;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.4;height:5;width:2.5"
-		 text="width:5;value:False;zOffset:0;align:center" onclick="showquiz1()">
+		 text="width:5;value:No;zOffset:0;align:center" onclick="showquiz1()">
 		</a-entity>
 
 		<a-image id="quiz1wrong" src="#quiz1Img" position="5 2.61 32.03" height ="1.16" width ="4.38" geometry="primitive:plane" visible="false"></a-image>
 
 		<a-entity id="quiz2-answerTrue" checkpoint="" position="3.01 0.82 19.7" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center" rotation="0 90 0">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:Yes;zOffset:0;align:center" rotation="0 90 0">
 		</a-entity>
 
 		<a-entity id="quiz2-answerFalse" position="3.01 0.82 18.59" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center" rotation="0 90 0" onclick="showquiz2()">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:No;zOffset:0;align:center" rotation="0 90 0" onclick="showquiz2()">
 		</a-entity>
 
 		<a-image id="quiz2wrong" src="#quiz2Img" position="3.04 2.95 19.05" height ="1" width ="2.15" geometry="primitive:plane" visible="false" rotation="0 90 0"></a-image>
 		
 		<a-entity id="quiz3-answerTrue" position="2.17 0.82 19.7" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center" rotation="0 90 0"  onclick="showquiz3()">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:Yes;zOffset:0;align:center" rotation="0 90 0"  onclick="showquiz3()">
 		</a-entity>
 
 		<a-image id="quiz3wrong" src="#quiz3Img" position="1.96 3.07 19.05" height ="1" width ="2.15" geometry="primitive:plane" visible="false" rotation="0 90 0"></a-image>
 		
 		<a-entity id="quiz3-answerFalse" checkpoint="" position="2.18 0.82 18.59" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center" rotation="0 90 0">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:No;zOffset:0;align:center" rotation="0 90 0">
 		</a-entity>
 
 		
