@@ -12,79 +12,65 @@
 	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
 
 	<script>
-		// AFRAME.registerComponent('quiz1-answerFalse', {
-		// 	init: function () {
-		// 		var el = this.el;
-		// 		el.addEventListener('click', function () {
-		// 			// var quiz1 = document.getElementById('quiz1Img');
-		// 			// quiz1.style.visibility = 'fa';
 
-		// 			console.log("init");
-		// 		});
-		// 	}
-		// });
-
-
-		function showquiz1(){
+		function showquiz1() {
 			var ele = document.getElementById("quiz1-answerFalse");
 
 			//ele.onclick = function() {
-				// alert("init for quiz1-answerFalse");
+			// alert("init for quiz1-answerFalse");
 			var quiz1 = document.getElementById('quiz1wrong');
 			quiz1.setAttribute('visible', true);
-            	// quiz1.style.visibility = 'visible';
+			// quiz1.style.visibility = 'visible';
 			//};
 		}
 
-		function showquiz2(){
+		function showquiz2() {
 			var ele = document.getElementById("quiz2-answerFalse");
 
 			//ele.onclick = function() {
 			//alert("init for quiz2-answerFalse");
 			var quiz2 = document.getElementById('quiz2wrong');
 			quiz2.setAttribute('visible', true);
-            	// quiz2.style.visibility = 'visible';
+			// quiz2.style.visibility = 'visible';
 			//};
 		}
 
-		function showquiz3(){
+		function showquiz3() {
 			var ele = document.getElementById("quiz3-answerTrue");
 
 			//ele.onclick = function() {
 			//alert("init for quiz3-answerFalse");
 			var quiz3 = document.getElementById('quiz3wrong');
 			quiz3.setAttribute('visible', true);
-            	// quiz3.style.visibility = 'visible';
+			// quiz3.style.visibility = 'visible';
 			//};
 		}
-		
-		function menupage(){
+
+		function menupage() {
 			//var ele = document.getElementById("backToMenu");
-			
+
 			//ele.onclick = function() {
 			window.location.href = "index.html";
 			//};
-			
-			
+
+
 		}
-		
-		function retry(){
-			alert("restarting game...");
+
+		function retry() {
+			// alert("restarting game...");
 			//var ele = document.getElementById("retry");
 			window.location.href = "ZebraPath.html";
 		}
-		
-		function displayoption(){
+
+		function displayoption() {
 			var menu = document.getElementById("backToMenu");
 			var retry = document.getElementById("retry");
 			var scene = document.getElementById("endScenario");
-			
+
 			menu.setAttribute('visible', true);
 			retry.setAttribute('visible', true);
 			scene.setAttribute('visible', true);
 		}
-
-
 	</script>
 </head>
 <a-scene inspector="url:https://aframe.io/releases/0.3.0/aframe-inspector.min.js" background="color:#ECECEC" class="fullscreen"
@@ -155,13 +141,13 @@
 
 		<a-assets-item id="stage" src="sceneModels\stage.ply"></a-assets-item>
 		<a-assets-item id="traffic_light" src="sceneModels\traffic_light.ply"></a-assets-item>
-	
+
 		<img id="quiz1Img" src="images/quiz1rules.PNG">
 		<img id="quiz2Img" src="images/quiz2rules.PNG">
 		<img id="quiz3Img" src="images/quiz3rules.PNG">
 	</a-assets>
 
-	<a-sky src="images\SouthernSky.jpg" material="" geometry="" scale="" position=""></a-sky>
+	<!-- <a-sky src="images\Bundesdatenschau.jpg" material="" geometry="" scale="" position=""></a-sky> -->
 
 	<!-- PCN left grass -->
 	<a-plane src="images\textures\env_grass2e_texture0.png" repeat="3 30" position="3 0 -4" rotation="-90 0 0" width="30"
@@ -179,16 +165,23 @@
 	<a-entity ply-model="src:#traffic_light" position="2.66 0 10.72" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#traffic_light" position="-7.15 0 7.09" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 
-	<a-entity id="transparentAtTraffic" checkpoint="" position="6.2 0.91 8.87" geometry="primitive:box;height:1.22;width:1.82;depth:1.68"
-	 material="side:double;transparent:true;opacity:1;visible:false"></a-entity>
-	<a-entity id="transparentAtBridge" checkpoint="" position="-7.59 0.80 9.42" geometry="primitive:box;height:3.8;width:1.63;depth:1"
-	 material="side:double;transparent:true;opacity:1;visible:false" onclick="displayoption()"></a-entity>
+	<a-entity id="transparentAtTraffic" checkpoint="" position="7.39 0.71 9" geometry="primitive:octahedron;height:1.22;width:1.82;depth:1.68"
+	 material="side:double;transparent:true;opacity:0.5;visible:true;color:#00ffff" scale="0.5 0.5 0.5" rotation="0 0 0"></a-entity>
+
+	<a-entity id="transparentAtBridge" checkpoint="" position="-7.13 0.56 9.2" geometry="primitive:octahedron;height:1.22;width:1.82;depth:1.68"
+	 material="side:double;transparent:true;opacity:0.5;visible:true;color:#00ffff" scale="0.5 0.5 0.5" onclick="displayoption()"
+	 rotation="-90 0 0"></a-entity>
 
 	<!-- Player -->
 	<a-entity position="6 0 35" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
 		<a-entity camera position="0 1 0" look-controls="pointerLockEnabled: true">
-			<a-entity cursor position="0 0 -1" geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.03;" material="color: #70E4EF"></a-entity>
-			<!-- <a-entity ply-model="src:#bicycle" position="0 -2.5  -0.5" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity> -->
+			<a-entity cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.03;"
+			 material="color: red">
+				<a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="backwards" from="0.1 0.1 0.1" to="1 1 1">
+				</a-animation>
+				<a-animation begin="fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.1 0.1 0.1">
+				</a-animation>
+			</a-entity>
 		</a-entity>
 	</a-entity>
 
@@ -202,7 +195,7 @@
 	 text="width:3.84;value:Should you dismount your bike?;zOffset:0;align:center" rotation="0 90 0">
 	</a-entity>
 
-	<a-entity id="quiz3-question" position="3.35 2 9.13" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
+	<a-entity id="quiz3-question" position="3.4 2 9.13" geometry="primitive:plane;height:0.5;width:2.92" material="color:black"
 	 text="width:3;value:Should you NOT check clear before you move?;zOffset:0;align:center" rotation="0 90 0">
 	</a-entity>
 
@@ -210,7 +203,7 @@
 	 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:Start Scenario;color:#000000;align:center;width:2.8"></a-entity>
 
 	<a-entity id="startScenario-2" checkpoint="" position="5.85 0.91 24" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
-	 geometry="primitive:plane;radius:0.28;height:0.8;width:1.85" text="zOffset:0;value:50m away from zebra crossing;color:#000000;align:center;width:2.8"></a-entity>
+	 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:50m away from zebra crossing;color:#000000;align:center;width:2.8"></a-entity>
 
 	<!-- Checkpoints -->
 	<a-entity position="1 0 -10">
@@ -222,48 +215,53 @@
 		 text="width:5;value:No;zOffset:0;align:center" onclick="showquiz1()">
 		</a-entity>
 
-		<a-image id="quiz1wrong" src="#quiz1Img" position="5 2.61 32.03" height ="1.16" width ="4.38" geometry="primitive:plane" visible="false"></a-image>
+		<a-image id="quiz1wrong" src="#quiz1Img" position="5 2.61 32.03" height="1.16" width="4.38" geometry="primitive:plane"
+		 visible="false"></a-image>
 
 		<a-entity id="quiz2-answerTrue" checkpoint="" position="3.01 0.82 19.7" material="color:green;opacity:0.8;transparent:true"
 		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:Yes;zOffset:0;align:center" rotation="0 90 0">
 		</a-entity>
 
 		<a-entity id="quiz2-answerFalse" position="3.01 0.82 18.59" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:No;zOffset:0;align:center" rotation="0 90 0" onclick="showquiz2()">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:No;zOffset:0;align:center" rotation="0 90 0"
+		 onclick="showquiz2()">
 		</a-entity>
 
-		<a-image id="quiz2wrong" src="#quiz2Img" position="3.04 2.95 19.05" height ="1" width ="2.15" geometry="primitive:plane" visible="false" rotation="0 90 0"></a-image>
-		
+		<a-image id="quiz2wrong" src="#quiz2Img" position="3.04 2.95 19.05" height="1" width="2.15" geometry="primitive:plane"
+		 visible="false" rotation="0 90 0"></a-image>
+
 		<a-entity id="quiz3-answerTrue" position="2.17 0.82 19.7" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:Yes;zOffset:0;align:center" rotation="0 90 0" onclick="showquiz3()">
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:Yes;zOffset:0;align:center" rotation="0 90 0"
+		 onclick="showquiz3()">
 		</a-entity>
 
-		<a-image id="quiz3wrong" src="#quiz3Img" position="1.96 3.07 19.05" height ="1" width ="2.15" geometry="primitive:plane" visible="false" rotation="0 90 0"></a-image>
-		
+		<a-image id="quiz3wrong" src="#quiz3Img" position="1.96 3.07 19.05" height="1" width="2.15" geometry="primitive:plane"
+		 visible="false" rotation="0 90 0"></a-image>
+
 		<a-entity id="quiz3-answerFalse" checkpoint="" position="2.18 0.82 18.59" material="color:red;opacity:0.8;transparent:true"
 		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:No;zOffset:0;align:center" rotation="0 90 0">
 		</a-entity>
 
-		<a-entity id="backToMenu" position="-10.35 0.82 20.55" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:plane;height:0.65;width:1.15" text="width:5;value:Menu;zOffset:0;align:center" visible="false" rotation="0 90 0" onclick="menupage()">
+		<a-entity id="backToMenu" position="-11.1 0.82 20.55" material="color:red;opacity:0.8;transparent:true" geometry="primitive:plane;height:0.65;width:1.15"
+		 text="width:5;value:Menu;zOffset:0;align:center" visible="false" rotation="0 90 0" onclick="menupage()">
 		</a-entity>
-		
-		<a-entity id="retry" position="-10.35 0.82 18.7" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:plane;height:0.65;width:1.15" text="width:5;value:Try Again;zOffset:0;align:center" visible="false" rotation="0 90 0" onclick="retry()">
+
+		<a-entity id="retry" position="-11.1 0.82 18.7" material="color:red;opacity:0.8;transparent:true" geometry="primitive:plane;height:0.65;width:1.15"
+		 text="width:5;value:Try Again;align:center" visible="false" rotation="0 90 0" onclick="retry()">
 		</a-entity>
-		
-		<a-entity id="endScenario" checkpoint="" position="-10.35 1.8 19.78" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
-		 geometry="primitive:plane;radius:0.28;height:0.8;width:3.71" text="zOffset:0;value:You have cleared the scenario!;color:#000000;align:center;" 
+
+		<a-entity id="endScenario" checkpoint="" position="-11.1 1.8 19.6" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
+		 geometry="primitive:plane;radius:0.28;height:0.8;width:3.71" text="zOffset:0;value:You have cleared the scenario!;color:#000000;align:center;"
 		 visible="false" rotation="0 90 0"></a-entity>
 
 
 		<!-- 
 		<a-entity id="quiz2-answerTrue" checkpoint="" position="6.49 1.8 16" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center">
+		geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center">
 		</a-entity>
 
 		<a-entity id="quiz2-answerFalse" checkpoint="" position="4.09 1.8 16" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center">
+		geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center">
 		</a-entity> -->
 
 	</a-entity>
@@ -397,19 +395,12 @@
 	<!-- Walkway to park -->
 	<a-entity ply-model="src:#sidewalk" position="10.5 0 6.8" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 
-	<!-- Text Box -->
-
-	<!-- <a-entity position="6.5 2 10" geometry="primitive:plane;height:0.5;width:2" material="color:black" text="width:2;value:Pedestrians on headphones that are unable to hear cyclists approaching and unknowingly walk directly into a moving bicycle
-	;zOffset:0">
-	</a-entity> -->
-	<!--Vehicles-->
-
-	<a-entity id="car1" class="non-clickable"  position="-0.30 0 -39"  ply-model="src:#car1" rotation="-90 0 180" scale="0.1 0.1 0.1">
-		<a-animation attribute="position" dur="5000" from="-3.40 0 -48.13" to= "-3.40 0 28"  repeat="indefinite" easing="linear"></a-animation>
+	<a-entity id="car1" class="non-clickable" position="-0.30 0 -39" ply-model="src:#car1" rotation="-90 0 180" scale="0.1 0.1 0.1">
+		<a-animation attribute="position" dur="5000" from="-3.40 0 -48.13" to="-3.40 0 28" repeat="indefinite" easing="linear"></a-animation>
 	</a-entity>
 
-	<a-entity id="car5" class="non-clickable"  position="-0.30 0 -39"  ply-model="src:#car5" rotation="-90 0 0" scale="0.1 0.1 0.1">
-		<a-animation attribute="position" dur="5000" from= "0.30 0 29.89" to="-0.30 0 -39" repeat="indefinite" easing="linear"></a-animation>
+	<a-entity id="car5" class="non-clickable" position="-0.30 0 -39" ply-model="src:#car5" rotation="-90 0 0" scale="0.1 0.1 0.1">
+		<a-animation attribute="position" dur="5000" from="0.30 0 29.89" to="-0.30 0 -39" repeat="indefinite" easing="linear"></a-animation>
 	</a-entity>
 
 
