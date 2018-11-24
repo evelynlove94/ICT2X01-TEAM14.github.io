@@ -178,17 +178,17 @@ function zebraPathScene() {
     window.location.href = "ZebraPath.html";
 }
 
-function showCutSceneOne() {
+function showCutScene() {
     console.log("PLAY CUTSCENE")
-    if (document.getElementById("quiz1-answerTrue").selected = true) {
+    if (document.getElementById("quiz3-answerFalse").selected = true) {
         document.getElementById("vidPlayer").setAttribute("visible", "true")
-        document.getElementById("quiz1-answerTrue").setAttribute("visible", "false")
-        document.getElementById("quiz1-answerFalse").setAttribute("visible", "false")
-        document.getElementById("quiz1-question").setAttribute("visible", "false")
+        document.getElementById("quiz3-answerTrue").setAttribute("visible", "false")
+        document.getElementById("quiz3-answerFalse").setAttribute("visible", "false")
+        document.getElementById("quiz3-question").setAttribute("visible", "false")
     }
 }
 
-function pauseCutSceneOne() {
+function pauseCutScene() {
     console.log("HIDE CUTSCENE")
     if (document.getElementById("play").selected = true) {
         console.log('hello')

@@ -96,12 +96,24 @@
 
 			eleCheckAtOppTraffic.setAttribute('visible', false);
 
-			// show end scenario
+			var eleRestartCyclingPath = document.getElementById('restartCyclingPathScene');
+			var eleBackToMainMenu = document.getElementById('backtomainmenu');
+			eleRestartCyclingPath.setAttribute('visible', true);
+			eleBackToMainMenu.setAttribute('visible', true);
 		}
 
 		function closeCutSceneOne() {
 			document.getElementById("vidPlayer").setAttribute("visible", "false")
-			checkAtBridge();
+			showCheckpoint4();
+		}
+
+		function restartCyclingPathScene() {
+			window.location.href = "CyclingPath.html";
+
+		}
+		function goToMainMenu() {
+			window.location.href = "index.html";
+
 		}
 	</script>
 </head>
@@ -110,9 +122,6 @@
 	<a-assets>
 		<a-mixin id="checkpoint"></a-mixin>
 		<a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
-
-		<a-assets-item id="hdb" src="sceneModels\hdb.ply"></a-assets-item>
-		<a-assets-item id="hdb1" src="sceneModels\hdb1.ply"></a-assets-item>
 
 		<a-assets-item id="veh-mini1" src="sceneModels\veh-mini1.ply"></a-assets-item>
 		<a-assets-item id="veh-mini2" src="sceneModels\veh-mini2.ply"></a-assets-item>
@@ -182,20 +191,18 @@
 		<img src="assets/volume-normal.png" id="volume-normal" crossorigin="anonymous">
 		<img src="assets/volume-mute.png" id="volume-mute" crossorigin="anonymous">
 		<img src="assets/seek-back.png" id="seek-back" crossorigin="anonymous">
+
+
+		<img id="HDB1" src="images/HDB1.png">
+		<img id="HDB2" src="images/HDB2.png">
 	</a-assets>
-
-	<!-- <a-sky src="images\Bundesdatenschau.jpg" material="" geometry="" scale="" position=""></a-sky> -->
-
 	<!-- PCN left grass -->
-	<a-plane src="images\textures\env_grass2e_texture0.png" repeat="3 30" position="3 0 -4" rotation="-90 0 0" width="30"
-	 height="80" shadow="" material="" geometry=""></a-plane>
+	<a-plane src="images\textures\env_grass2e_texture0.png" repeat="3 30" position="-0.33 0 -0.89" rotation="-90 0 0"
+	 shadow="" material="src:images\textures\env_grass2e_texture0.png;repeat:3 30" geometry="primitive:plane;width:40;height:65"></a-plane>
 
 	<!-- Road left grass -->
-	<a-plane src="images\textures\env_grass2e_texture0.png" repeat="3 30" position="0 0 -4" rotation="-90 0 0" width="55"
-	 height="80" shadow="" material="" geometry=""></a-plane>
-	<a-plane src="images\textures\sgroad.jpg" repeat="2 100" position="-2 0.02 -4" rotation="-90 0 0" width="10" height="80"
+	<a-plane src="images\textures\sgroad.jpg" repeat="2 100" position="-2 0.02 -4" rotation="-90 0 0" width="10" height="65"
 	 shadow="" material="" geometry=""></a-plane>
-
 	<a-plane src="images\textures\zebracrossing.jpg" position="-1.95 0.25 -20.85" rotation="-90 0 0" shadow="" material="repeat:3 1"
 	 geometry="primitive:plane;width:9.2;height:2.5"></a-plane>
 
@@ -227,43 +234,43 @@
 	<a-entity id="checkAtOppTraffic" checkpoint="" position="-8.09 0.99 -20.5" geometry="primitive:icosahedron;height:3.8;width:10"
 	 material="side:double;transparent:true;opacity:0.62;color:#8080c0" onclick="checkAtOppTraffic()" visible=false></a-entity>
 
+	<a-entity id="restartCyclingPathScene" checkpoint="" position="-9.72 4.13 -18.91" geometry="primitive:octahedron;height:3.8;width:10"
+	 material="side:double;transparent:true;opacity:0.62;color:#8080c0;visible:true" onclick="restartCyclingPathScene()" visible="false"></a-entity>
+
+	<a-entity id="backtomainmenu" checkpoint="" position="-8.09 4.19 -21.77" geometry="primitive:icosahedron;height:3.8;width:10"
+	 material="side:double;transparent:true;opacity:0.62;color:#8080c0" onclick="goToMainMenu()" visible="false" text=""></a-entity>
+
+
 	<!-- Player -->
-	<a-entity position="6 0 35" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
+	<a-entity position="5.98 0.2 29.71" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
 		<a-entity camera position="0 1 0" look-controls="pointerLockEnabled: true">
-			<a-entity cursor position="0 0 -1" geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.03;" material="color: #70E4EF"></a-entity>
+			<a-entity cursor position="0 0 -1" geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.03;" material="color: red"></a-entity>
+			<a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="backwards" from="0.1 0.1 0.1" to="1 1 1">
+			</a-animation>
+			<a-animation begin="fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.1 0.1 0.1">
+			</a-animation>
 		</a-entity>
-	</a-entity>
-	<!-- <a-entity position="6 0 35" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
-		<a-entity camera position="0 1 0" look-controls="pointerLockEnabled: true">
-			<a-entity cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.03;"
-			 material="color: red">
-				<a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="backwards" from="0.1 0.1 0.1" to="1 1 1">
-				</a-animation>
-				<a-animation begin="fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.1 0.1 0.1">
-				</a-animation>
-			</a-entity>
-		</a-entity>
-	</a-entity> -->
+	</a-entity>]
 
 	<!-- Quiz -->
 	<a-entity id="quiz1-question" position="5.68 2.43 16" geometry="primitive:plane;height:0.5;width:4" material="color:black"
-	 text="width:3.84;value:Pedestrians can cycle on a bridge (True/False);zOffset:0;align:center" visible=false>
+	 text="width:3.84;value:Pedestrians can cycle on a bridge (True/False);zOffset:0;align:center" visible="false">
 	</a-entity>
 
 	<a-entity id="quiz2-question" position="5.68 3.41 6.2" geometry="primitive:plane;height:0.5;width:4" material="color:black"
 	 text="width:3.84;value:You should keep to the left of the lane while cycling (True/False);zOffset:0;align:center"
-	 visible=false>
+	 visible="false">
 	</a-entity>
 
 	<a-entity id="quiz3-question" position="3.88 2.2600000000000002 -20.7" geometry="primitive:plane;height:0.5;width:3.48"
 	 material="color:black" text="width:3.84;value:What is the speed limit for cycling path?;zOffset:0;align:center"
-	 visible=false rotation="0 90 0">
+	 visible="false" rotation="0 90 0">
 	</a-entity>
 
-	<a-entity id="vidPlayer" position="5.31 3.41 -25.05" visible="true">
+	<a-entity id="vidPlayer" position="3.75 4.06 -24.89" rotation="-12 35.24 0" visible="false">
 		<!-- MEDIAS HOLDER -->
 		<a-sound id="alert-sound" src="src: url(assets/action.wav)" autoplay="false" sound=""></a-sound>
-		<a-video id="video-screen" src="#video-src" width="7" height="4" rotation="10 0 0" material="" geometry=""></a-video>
+		<a-video id="video-screen" src="#video-src" width="7" height="4" rotation="10 0 0" material="" geometry="" position=""></a-video>
 		<!-- END MEDIAS HOLDER -->
 
 		<!-- CONTROLS -->
@@ -283,103 +290,74 @@
 		 position="0 -1.5 0.1">
 			<a-plane id="progress-bar-track" width="4" height="0.06" color="black" opacity="0.2" visible="false" material=""
 			 geometry=""></a-plane>
-			<a-plane id="progress-bar-fill" width="0" height="0.06" color="#7198e5" visible="false" material="" geometry=""
-			 position=""></a-plane>
-
+			<a-plane id="progress-bar-fill" width="0.08794613708503916" height="0.06" color="#7198e5" visible="false" material=""
+			 geometry="" position=""></a-plane>
 			<!-- END PROGRESSBAR -->
 		</a-entity>
 	</a-entity>
+
 	<!-- Checkpoints -->
 	<a-entity position="1 0 -10">
 		<a-entity id="quiz1-answerTrue" position="5.5 1.8 26" material="color:green;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.4;height:5;width:2.5"
-		 text="width:5;value:True;zOffset:0;align:center " visible=false onclick="showCutSceneOne()">
+		 text="width:5;value:True;zOffset:0;align:center " visible=false>
 		</a-entity>
 
 		<a-entity id="quiz1-answerFalse" checkpoint="" position="4.1 1.8 26" material="color:red;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center" visible=false
+		 geometry="primitive:circle;radius:0.4;height:5;width:2.5" text="width:5;value:False;zOffset:0;align:center" visible="false"
 		 onclick="showCheckpoint2()">
 		</a-entity>
 
 		<a-entity id="quiz2-answerTrue" checkpoint="" position="5.34 2.4 16" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center" visible=false
+		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:True;zOffset:0;align:center" visible="false"
 		 onclick="showCheckpoint3()">
 		</a-entity>
 
 		<a-entity id="quiz2-answerFalse" position="3.82 2.4 16" material="color:red;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.6;height:5;width:2.5"
-		 text="width:5;value:False;zOffset:0;align:center" visible=false>
+		 text="width:5;value:False;zOffset:0;align:center" visible="false">
 		</a-entity>
 
 		<a-entity id="quiz3-answerFalse" position="2.7 1 -10" material="color:red;opacity:0.8;transparent:true" geometry="primitive:circle;radius:0.6;height:5;width:2.5"
-		 text="width:5;value:25km/h;zOffset:0;align:center" rotation="0 90 0" visible=false>
+		 text="width:5;value:25km/h;zOffset:0;align:center" rotation="0 90 0" visible="false" onclick="showCutScene()">
 		</a-entity>
 
 		<a-entity id="quiz3-answerTrue" checkpoint="" position="2.7 1 -11.63" material="color:green;opacity:0.8;transparent:true"
-		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:15km/h;zOffset:0;align:center" visible=false
+		 geometry="primitive:circle;radius:0.6;height:5;width:2.5" text="width:5;value:15km/h;zOffset:0;align:center" visible="false"
 		 onclick="showCheckpoint4()" rotation="0 90 0">
 		</a-entity>
 
-		<a-entity id="startScenario" checkpoint="" position="4.92 1 40" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
+		<a-entity id="startScenario" checkpoint="" position="4.92 1 37.53" color="#E6FF00" material="color:#ffffff;opacity:0.7;transparent:true"
 		 geometry="primitive:plane;radius:0.28;height:0.8;width:1.5" text="zOffset:0;value:Let's start cycling!;color:#000000;align:center;width:2.8"></a-entity>
 	</a-entity>
 
 	<!-- Character -->
 
 	<!-- PCN left trees -->
-	<a-entity ply-model="src:#obj_tree1" position="3.50 0 -40" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree4" position="3.50 0 -35" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree2" position="3.50 0 -30" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree1" position="3.50 0 -25" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree4" position="3.50 0 -15" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree1" position="3.50 0 -10" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree2" position="3.50 0 -5" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree2" position="3.50 0 0" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 
 	<!-- PCN right trees -->
-	<a-entity ply-model="src:#obj_tree2" position="8 0 -40" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree2" position="8 0 -35" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree2" position="8 0 -30" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree1" position="8 0 -25" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree4" position="8 0 -20" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
-	<a-entity ply-model="src:#obj_tree4" position="8 0 -15" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree1" position="8 0 -10" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#obj_tree4" position="8 0 -5" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 
 	<!-- vehicles -->
-	<a-entity ply-model="src:#wagon4" position="11 0 18" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+	<a-entity ply-model="src:#wagon4" position="1.41 0 -13.71" scale="0.1 0.1 0.1" rotation="-90 180 0">
+		<a-animation attribute="position" dur="2000" to="1.41 0 18" repeat="indefinite" easing="linear"></a-animation>
+	</a-entity>
+
 	<!-- HDB  -->
-	<a-entity ply-model="src:#hdb" position="12 0 -15.04" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb" position="12 2 -15.04" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb" position="12 4 -15.04" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb" position="12 6 -15.04" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb" position="12 8 -15.04" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-
-	<a-entity ply-model="src:#hdb" position="12 0 -12.02" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb" position="12 2 -12.02" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb" position="12 4 -12.02" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb" position="12 6 -12.02" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb" position="12 8 -12.02" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-
-	<a-entity ply-model="src:#hdb1" position="12 0 -18" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb1" position="12 2 -18" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb1" position="12 4 -18" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb1" position="12 6 -18" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb1" position="12 8 -18" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-
-	<a-entity ply-model="src:#hdb1" position="12 0 -21.03" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb1" position="12 2 -21.03" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb1" position="12 4 -21.03" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb1" position="12 6 -21.03" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
-	<a-entity ply-model="src:#hdb1" position="12 8 -21.03" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
+	<a-image src="#HDB1" height="100" width="25" position="-19.74 12 0.8" rotation="0 -90 -90" repeat="1 2" geometry="primitive:plane;height:61.84;width:25"></a-image>
+	<a-image src="#HDB2" height="100" width="25" position="18 12 0.64" rotation="0 -90 -90" repeat="1 2" geometry="primitive:plane;height:61.84;width:25"></a-image>
 
 	<!-- Scenes -->
-	<a-entity ply-model="src:#scene_store4" position="-10 0 26" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
-	<a-entity ply-model="src:#scene_store11" position="-10 0 6.61" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
+	<a-entity ply-model="src:#scene_store4" position="12 0 -15.46" scale="0.1 0.1 0.1" rotation="-90 -90 0"></a-entity>
+	<a-entity ply-model="src:#scene_store11" position="-10 0 3.81" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#busstop" position="-7.5 0 -9.85" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
-	<a-entity ply-model="src:#bus" position="-5.47 0 -10.03" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+	<a-entity ply-model="src:#bus" position="-5.47 0 22.99" scale="0.1 0.1 0.1" rotation="-90 0 0">
+		<a-animation attribute="position" dur="2000" to="-5.47 0 -10.03" repeat="indefinite" easing="linear"></a-animation>
+	</a-entity>
 
 	<!-- PCN Left-->
-	<a-entity ply-model="src:#sidewalk" position="5 0 -39" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
-	<a-entity ply-model="src:#sidewalk" position="5 0 -34" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="5 0 -29" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="5 0 -24" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="5 0 -19" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
@@ -392,12 +370,8 @@
 	<a-entity ply-model="src:#sidewalk" position="5 0 16" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="5 0 21" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="5 0 26" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
-	<a-entity ply-model="src:#sidewalk" position="5 0 31" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
-
 
 	<!-- PCN Right-->
-	<a-entity ply-model="src:#sidewalk" position="6.5 0 -39" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
-	<a-entity ply-model="src:#sidewalk" position="6.5 0 -34" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="6.5 0 -29" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="6.5 0 -24" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="6.5 0 -19" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
@@ -410,7 +384,6 @@
 	<a-entity ply-model="src:#sidewalk" position="6.5 0 16" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="6.5 0 21" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 	<a-entity ply-model="src:#sidewalk" position="6.5 0 26" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
-	<a-entity ply-model="src:#sidewalk" position="6.5 0 31" scale="0.1 0.1 0.1" rotation="-90 90 0"></a-entity>
 
 	<script src="js/AVideoPlayer.js"></script>
 	<script type="text/javascript">
