@@ -114,3 +114,17 @@ localhost/ICT2X01-TEAM14.github.io/editScenario.html
 * **[Tan Fu Hui - 1700397](https://github.com/xxxx397)**: *Zebra Crossing Scenario, Tester*
 
 See also the list of [contributors](https://github.com/evelynlove94/ICT2X01-TEAM14.github.io/graphs/contributors) who participated in this project.
+
+## FAQ
+
+**If internet connection is required, does that mean it's multiplayer?** 
+
+Unfortunately at its current development stage, CycleX is a single player simulation. Internet connection is required to be able to connect to some libraries for it to work.
+
+**Do I need any special equipment to run CycleX?**
+
+Not at all. You can run CycleX either from your laptop or mobile device. The only thing required is a VR-supported browser such as Chrome or Firefox.
+
+**How much does it cost?**
+
+Nothing!
