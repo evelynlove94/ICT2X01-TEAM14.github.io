@@ -13,7 +13,8 @@ Clone the repository https://github.com/evelynlove94/ICT2X01-TEAM14.github.io
 
 1. XAMPP 
 2. Git Desktop
-3. Working Phone (iOS or Android) with Web Browser
+3. Working Phone (iOS or Android) with Web Browser | Computer with Chrome
+4. Working internet connection
 
 ### Installing
 
