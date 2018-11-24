@@ -39,7 +39,10 @@ Demo Live version:
 
 * [Aframe](https://aframe.io/) - A web framework for building virtual reality experiences 
 * [Visual Studio Code](https://code.visualstudio.com/) - Code Management
-* [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - Launch a development local Server with live reload feature for static & dynamic pages
+* [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - Visual Studio Code extension with live reload feature for static & dynamic pages
+* [Poly Google](https://poly.google.com/) - For some of the placeholder 3D models. Credits: [Imran Bepari](https://poly.google.com/view/2WOXO0LlL0K) | [David Sirera](https://poly.google.com/view/a_HKCtYAv2W) | [Poly by Google](https://poly.google.com/view/0-j0ksmXXtz) | [Poly by Google](https://poly.google.com/view/5v5j_lqOHTO) | [Jarlan Perez](https://poly.google.com/view/5eb8E34txWa) | [Paul Spooner](https://poly.google.com/view/1yfyze7uGxS)
+* [MikeLovesRobots](https://github.com/mikelovesrobots/mmmm) - Another credit for placeholder 3D models
+* [WeSimplifyMarketing YouTube](https://www.youtube.com/watch?v=_Tel8w_Pe2Q) - Placeholder Safe Cycling Video for cutscene
 
 ## How to play?
 

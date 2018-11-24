@@ -138,38 +138,13 @@
 		<a-assets-item id="obj_tree2" src="sceneModels\obj_tree2.ply"></a-assets-item>
 		<a-assets-item id="obj_tree4" src="sceneModels\obj_tree4.ply"></a-assets-item>
 
-		<a-assets-item id="scene_store4" src="sceneModels\scene_store4.ply"></a-assets-item>
-		<a-assets-item id="scene_store7" src="sceneModels\scene_store7.ply"></a-assets-item>
 		<a-assets-item id="scene_store11" src="sceneModels\scene_store11.ply"></a-assets-item>
-
-		<a-assets-item id="env_crete1a" src="sceneModels\env_crete1a.ply"></a-assets-item>
-		<a-assets-item id="env_crete1b" src="sceneModels\env_crete1b.ply"></a-assets-item>
-		<a-assets-item id="env_crete1c" src="sceneModels\env_crete1c.ply"></a-assets-item>
-		<a-assets-item id="env_crete1d" src="sceneModels\env_crete1d.ply"></a-assets-item>
-
-		<a-assets-item id="env_grass1a" src="sceneModels\env_grass1a.ply"></a-assets-item>
-		<a-assets-item id="env_grass1b" src="sceneModels\env_grass1b.ply"></a-assets-item>
-		<a-assets-item id="env_grass1c" src="sceneModels\env_grass1c.ply"></a-assets-item>
-		<a-assets-item id="env_grass1d" src="sceneModels\env_grass1d.ply"></a-assets-item>
-
-		<a-assets-item id="tree1" src="sceneModels\tree1.ply"></a-assets-item>
-		<a-assets-item id="house1a" src="sceneModels\house1a.ply"></a-assets-item>
-		<a-assets-item id="house2" src="sceneModels\house2.ply"></a-assets-item>
-		<a-assets-item id="house3a" src="sceneModels\house3a.ply"></a-assets-item>
-		<a-assets-item id="scene_house6" src="sceneModels\scene_house6.ply"></a-assets-item>
-		<a-assets-item id="playground1" src="sceneModels\playground1.ply"></a-assets-item>
-		<a-assets-item id="playground2" src="sceneModels\playground2.ply"></a-assets-item>
-		<a-assets-item id="playground3" src="sceneModels\playground3.ply"></a-assets-item>
-		<a-assets-item id="playground4" src="sceneModels\playground4.ply"></a-assets-item>
-		<a-assets-item id="playground5" src="sceneModels\playground5.ply"></a-assets-item>
-		<a-assets-item id="scene_park4" src="sceneModels\scene_park4.ply"></a-assets-item>
 
 		<a-assets-item id="chr_lady1" src="sceneModels\chr_lady1.ply"></a-assets-item>
 		<a-assets-item id="chr_oldlady" src="sceneModels\chr_oldlady.ply"></a-assets-item>
 		<a-assets-item id="chr_oldman" src="sceneModels\chr_oldman.ply"></a-assets-item>
 		<a-assets-item id="chr_headphones" src="sceneModels\chr_headphones.ply"></a-assets-item>
 
-		<a-assets-item id="rubbish" src="sceneModels\rubbish.ply"></a-assets-item>
 		<a-assets-item id="cab1" src="sceneModels\cab1.ply"></a-assets-item>
 		<a-assets-item id="car1" src="sceneModels\car1.ply"></a-assets-item>
 		<a-assets-item id="car5" src="sceneModels\car5.ply"></a-assets-item>
@@ -177,13 +152,8 @@
 		<a-assets-item id="truck1" src="sceneModels\truck1.ply"></a-assets-item>
 		<a-assets-item id="bus" src="sceneModels\bus.ply"></a-assets-item>
 		<a-assets-item id="busstop" src="sceneModels\busstop.ply"></a-assets-item>
-		<a-assets-item id="army" src="sceneModels\scene_army.ply"></a-assets-item>
 
 		<a-assets-item id="sidewalk" src="sceneModels\sidewalk5.ply"></a-assets-item>
-		<a-assets-item id="theatre" src="sceneModels\scene_theatre.ply"></a-assets-item>
-		<a-assets-item id="park" src="sceneModels\scene_park.ply"></a-assets-item>
-		<a-assets-item id="house7" src="sceneModels\scene_house7.ply"></a-assets-item>
-		<a-assets-item id="coffee" src="sceneModels\scene_coffee.ply"></a-assets-item>
 
 		<a-assets-item id="stage" src="sceneModels\stage.ply"></a-assets-item>
 		<a-assets-item id="traffic_light" src="sceneModels\traffic_light.ply"></a-assets-item>
@@ -397,35 +367,10 @@
 
 	<script src="js/AVideoPlayer.js"></script>
 	<script type="text/javascript">
-		// let scene = document.querySelector('a-scene');
-		// var cursor = document.querySelector('a-cursor');
 		/**
 		* AVideoPlayer
 		*/
 		var videoPlayer = new AVideoPlayer();
-		/**
-		* CURSOR
-		*/
-		// Cursor
-		// let hideCursor = function () {
-		// 	cursor.removeAttribute('animation__cursorHideLeave');
-		// 	cursor.setAttribute('animation__cursorHideEnter', "property: scale; from: 0.6 0.6 0.6; to: 0 0 0; dur: 300; easing: easeInQuad;");
-		// }
-		// let showCursor = function () {
-		// 	cursor.removeAttribute('animation__cursorHideEnter');
-		// 	cursor.setAttribute('animation__cursorHideLeave', "property: scale; from: 0 0 0; to: 0.6 0.6 0.6; dur: 300; easing: easeInQuad;");
-		// }
-		// document.querySelector('#video-screen').addEventListener('mouseenter', hideCursor);
-		// document.querySelector('#video-screen').addEventListener('mouseleave', showCursor);
-		// Play button action
-		// document.querySelector('#control-play').addEventListener('click', function () {
-		// 	if (videoPlayer.paused) {
-		// 		scene.lightOn()
-		// 	} else {
-		// 		scene.lightOff();
-		// 		hideCursor();
-		// 	}
-		// });
 	</script>
 </a-scene>
 
