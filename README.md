@@ -100,11 +100,16 @@ localhost/ICT2X01-TEAM14.github.io/editScenario.html
 
 ## Authors
 
-* **Evelyn Tan** - *Initial work* - [evenlynlove94](https://github.com/evelynlove94)
-* **Md Fauzi** - *Initial work* - [MFauZ](https://github.com/MFauz)
-* **Dominic Yeo** - *Developer* - [DominicYeo93](https://github.com/DominicYeo93)
-* **Toh Chong Lee** - *Developer* - [chiongsterx](https://github.com/chiongsterx)
-* **Don Cheng** - *Developer* - [1700802](https://github.com/1700802)
-* **Tan Fu Hui** - *Developer* - [xxxx397](https://github.com/xxxx397)
+* **[Tan Jia Lin Evelyn - 1702327](https://github.com/evelynlove94)**: *Initial setup, Cycling Path Scenario, Zebra Crossing Scenario, ReadMe document, Code Cleanup, Integration*
+
+* **[Muhammadd Fauzi Bin Johari - 1701017](https://github.com/MFauz)**: *Initial setup, Road Cycling Scenario, Main Menu Navigation, SCTF Edit Page, Trailer Video, Code Cleanup*
+
+* **[Dominic Yeo - 1701008](https://github.com/DominicYeo93)**: *Zebra Crossing Scenario, Cycling Path Scenario, Cutscene Video, ReadMe document, Integration*
+
+* **[Toh Chong Lee - 1702707](https://github.com/chiongsterx)**: *Zebra Crossing Scenario, Tester*
+
+* **[Cheng Kai Wen Don - 1700802](https://github.com/1700802)**: *Zebra Crossing Scenario, SCTF Login Validation, Reflection, Tester*
+
+* **[Tan Fu Hui - 1700397](https://github.com/xxxx397)**: *Zebra Crossing Scenario, Tester*
 
 See also the list of [contributors](https://github.com/evelynlove94/ICT2X01-TEAM14.github.io/graphs/contributors) who participated in this project.
