@@ -101,7 +101,15 @@
 
 		function closeCutSceneOne() {
 			document.getElementById("vidPlayer").setAttribute("visible", "false")
-			showCheckpoint4();
+			// showCheckpoint4();
+
+			var eleQuiz3_Question = document.getElementById('quiz3-question');
+			var eleQuiz3_True = document.getElementById('quiz3-answerTrue');
+			var eleQuiz3_False = document.getElementById('quiz3-answerFalse');
+
+			eleQuiz3_Question.setAttribute('visible', true);
+			eleQuiz3_True.setAttribute('visible', true);
+			eleQuiz3_False.setAttribute('visible', true);
 		}
 
 		function restartCyclingPathScene() {
@@ -191,6 +199,7 @@
 
 		<img id="HDB1" src="images/HDB1.png">
 		<img id="HDB2" src="images/HDB2.png">
+		<img id="bicycleHandle" src="images/bicycle_handle.png">
 	</a-assets>
 
 	<!--Skybox-->
@@ -198,13 +207,13 @@
 
 	<!-- PCN left grass -->
 	<a-plane src="images\textures\env_grass2e_texture1.png" repeat="3 30" position="-0.33 0 -0.89" rotation="-90 0 0"
-		shadow="" material="src:images\textures\env_grass2e_texture1.png;repeat:3 30" geometry="primitive:plane;width:40;height:65"></a-plane>
+	 shadow="" material="src:images\textures\env_grass2e_texture1.png;repeat:3 30" geometry="primitive:plane;width:40;height:65"></a-plane>
 
 	<!-- Road left grass -->
 	<a-plane src="images\textures\sgroad.jpg" repeat="2 100" position="-2 0.02 -4" rotation="-90 0 0" width="10" height="65"
-	 	shadow="" material="" geometry=""></a-plane>
+	 shadow="" material="" geometry=""></a-plane>
 	<a-plane src="images\textures\zebracrossing.jpg" position="-1.95 0.25 -20.85" rotation="-90 0 0" shadow="" material="repeat:3 1"
-	 	geometry="primitive:plane;width:9.2;height:2.5"></a-plane>
+	 geometry="primitive:plane;width:9.2;height:2.5"></a-plane>
 
 	<a-entity ply-model="src:#traffic_light" position="-7.15 0 -23.06" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
 	<a-entity ply-model="src:#traffic_light" position="2.66 0 -19" scale="0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
@@ -234,11 +243,13 @@
 	<a-entity id="checkAtOppTraffic" checkpoint="" position="-8.09 0.99 -20.5" geometry="primitive:icosahedron;height:3.8;width:10"
 	 material="side:double;transparent:true;opacity:0.62;color:#8080c0" onclick="checkAtOppTraffic()" visible=false></a-entity>
 
-	<a-entity id="restartCyclingPathScene" checkpoint="" position="-9.72 4.13 -18.91" geometry="primitive:octahedron;height:3.8;width:10"
-	 material="side:double;transparent:true;opacity:0.62;color:#8080c0;visible:true" onclick="restartCyclingPathScene()" visible="false"></a-entity>
+	<a-entity id="restartCyclingPathScene" checkpoint="" position="-15 3.329 -18.91" geometry="primitive:plane;height:1.26;width:3.47"
+	 material="side:double;transparent:true;opacity:0.62;color:#8080c0" onclick="restartCyclingPathScene()" visible="false"
+	 rotation="0 90 0" text="value:Restart Scenario;width:9.09;align:center"></a-entity>
 
-	<a-entity id="backtomainmenu" checkpoint="" position="-8.09 4.19 -21.77" geometry="primitive:icosahedron;height:3.8;width:10"
-	 material="side:double;transparent:true;opacity:0.62;color:#8080c0" onclick="goToMainMenu()" visible="false" text=""></a-entity>
+	<a-entity id="backtomainmenu" checkpoint="" position="-15 3.329 -22.689" geometry="primitive:plane;height:1.26;width:3.47"
+	 material="side:double;transparent:true;opacity:0.62;color:#8080c0" onclick="goToMainMenu()" visible="false" text="value:Back To Main Menu;width:9.09;align:center"
+	 rotation="0 90 0"></a-entity>
 
 	<!-- Player -->
 	<a-entity position="5.98 0.2 29.71" id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
@@ -248,6 +259,7 @@
 			</a-animation>
 			<a-animation begin="fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.1 0.1 0.1">
 			</a-animation>
+			<a-image src="#bicycleHandle" width="2" position="0 -0.7 -1" alpha-test="0.5"></a-image>
 		</a-entity>
 	</a-entity>]
 
