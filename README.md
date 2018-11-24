@@ -53,7 +53,7 @@ If the user selects "Tutorial", they will be directed to the tutorial page where
 ```
 localhost/ICT2X01-TEAM14.github.io/tutorial.html
 ```
-![Tutorial UI](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/Tutorial.PNG)
+![Tutorial UI](https://raw.githubusercontent.com/evelynlove94/ICT2X01-TEAM14.github.io/master/README.md%20images/tutorial.JPG)
 
 If the user selects "Play", they will be directed to the vehicle page where they are allowed to choose their mode of transportation.
 ```
