@@ -3,6 +3,8 @@
 Riding safely with Virtual Reality.
 CycleX is an interactive application that makes use of Virtual Reality (VR) technology that aims to instill safe cycling practices into both cyclists and non-cyclists who may not necessarily be well aware of the cycling rules and ethics. CycleX hopes to achieve this by allowing the users to go through an immersive virtual experience and decide on their actions through a series of scenarios from the perspective of a cyclist and/or pedestrian.
 
+[Video Trailer can be found here.](https://www.youtube.com/watch?v=GPVfS7wUBUQ&feature=youtu.be)
+
 ## Getting Started
 
 Clone the repository https://github.com/evelynlove94/ICT2X01-TEAM14.github.io
